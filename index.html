@@ -1,41 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="scroll-behavior: smooth" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/fontello.css" />
     <title>Mebelist | Online-Shop</title>
   </head>
   <body>
-    <div class="container">
+    <div id="container" class="container">
+      <a href="#container" class="page-up" id="pageUp"></a>
       <header>
         <div class="header-container">
-          <nav>
+          <nav class="navigation">
             <ul class="nav-menu">
-              <li><a class="main-link" href="">Home</a></li>
+              <li>
+                <a class="main-link" href="">Home</a>
+              </li>
               <li><a href="">Products</a></li>
               <li><a href="">About</a></li>
             </ul>
-            <h1>MEBELIST</h1>
+            <h1 id="logoSign">MEBELIST</h1>
             <button>
-              <img
-                src="./images/header-shop.png"
-                width="40px"
-                height="40px"
-                alt=""
-              />
+              <i class="icon-basket"></i>
             </button>
           </nav>
           <section>
             <h1 class="header-sign">Home, sweet home...</h1>
             <p>Customize your home!</p>
-            <button class="show-btn">SHOW HOW</button>
+            <button class="show-btn"><a href="#main">SHOW HOW</a></button>
           </section>
         </div>
       </header>
-      <main></main>
+      <main id="main">
+        <h1 class="featured-sign">/ Featured</h1>
+        <section>
+          <article class="section-elem">
+            <img class="article-img" src="./images/first-product.jpg" alt="" />
+            <h3>High-Back Bed</h3>
+            <p>119.99$</p>
+          </article>
+          <article class="section-elem">
+            <img
+              class="article-img"
+              src="./images/second-product.jpeg"
+              alt=""
+            />
+            <h3>Utopia Bed</h3>
+            <p>89.99$</p>
+          </article>
+          <article class="section-elem">
+            <img class="article-img" src="./images/third-product.jpg" alt="" />
+            <h3>Barocco Bed</h3>
+            <p>179.99$</p>
+          </article>
+        </section>
+        <button><a href="">All Products</a></button>
+      </main>
+      <footer>
+        <div class="footer-container">
+          <article class="logo">
+            <h1>MEBELIST</h1>
+            <article class="media">
+              <a href="https://www.facebook.com/" target="_blank"
+                ><i class="icon-facebook"></i
+              ></a>
+              <a href="https://www.instagram.com/" target="_blank"
+                ><i class="icon-instagram"></i
+              ></a>
+              <a href="https://web.telegram.org/" target="_blank"
+                ><i class="icon-telegram"></i
+              ></a>
+              <a href="https://twitter.com/login" target="_blank"
+                ><i class="icon-twitter"></i
+              ></a>
+            </article>
+          </article>
+          <article class="links">
+            <h1>Links</h1>
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="">Products</a></li>
+              <li><a href="">About</a></li>
+            </ul>
+          </article>
+          <article class="contacts">
+            <h1>Contacts</h1>
+            <ul>
+              <li>+38 0636 810 365</li>
+              <li>mebelist@gmail.com</li>
+              <li>Broadway Street 42</li>
+            </ul>
+          </article>
+          <article class="feedback">
+            <h1>Feedback</h1>
+            <form action="">
+              <label for="email">We will contact you!</label>
+              <input placeholder="Enter your email:" id="email" type="email" />
+              <button>Send</button>
+            </form>
+          </article>
+        </div>
+      </footer>
     </div>
-    <script src="./scripts.js"></script>
+    <script src="./js/scripts.js"></script>
   </body>
 </html>

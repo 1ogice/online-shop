@@ -1,0 +1,461 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:wght@700&display=swap");
+body {
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.page-up {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  border: 2px solid white;
+  border-radius: 50%;
+  left: 40px;
+  bottom: 100px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  -webkit-animation-name: show_page_up;
+          animation-name: show_page_up;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+.page-up::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-left: 2px solid white;
+  border-top: 2px solid white;
+  left: 14px;
+  position: absolute;
+  top: 30px;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+          transform: translateY(-50%) rotate(45deg);
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.page-up:hover {
+  border: 2px solid black;
+}
+.page-up:hover::after {
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+}
+
+.page-up-hidden {
+  display: none;
+}
+
+@-webkit-keyframes show_page_up {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show_page_up {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+header {
+  padding-top: 30px;
+  color: white;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(../images/header-background.jpg);
+  -webkit-box-shadow: inset 1px 1200px rgba(0, 0, 0, 0.459);
+          box-shadow: inset 1px 1200px rgba(0, 0, 0, 0.459);
+  height: 500px;
+}
+
+.header-container {
+  width: 80%;
+  margin: 0 auto;
+}
+.header-container .navigation {
+  top: 30px;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.header-container .navigation .nav-menu {
+  padding: 0;
+  margin: 0;
+}
+.header-container .navigation .nav-menu li {
+  padding-right: 50px;
+  display: inline;
+}
+.header-container .navigation .nav-menu li .main-link {
+  background: none;
+  padding: 5px 10px;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+.header-container .navigation .nav-menu li .main-link:hover {
+  border: 2px solid black;
+}
+.header-container .navigation .nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: sans-serif;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.header-container .navigation .nav-menu li a:hover {
+  color: black;
+}
+.header-container .navigation h1 {
+  font-size: 40px;
+  font-family: "Playfair Display", serif;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -10%);
+          transform: translate(-50%, -10%);
+}
+.header-container .navigation button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.header-container .navigation button .icon-basket {
+  color: white;
+  font-size: 30px;
+}
+.header-container .navigation button .icon-basket::before {
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.header-container .navigation button .icon-basket:hover::before {
+  color: black;
+}
+.header-container section {
+  margin-top: 100px;
+}
+.header-container section .header-sign {
+  margin: 0;
+  font-size: 80px;
+  font-family: "Dancing Script", cursive;
+}
+.header-container section p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+}
+.header-container section .show-btn {
+  background: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  letter-spacing: 3px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+.header-container section .show-btn:hover {
+  border: 2px solid black;
+  color: black;
+}
+.header-container section .show-btn:hover a {
+  color: black;
+}
+.header-container section .show-btn a {
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: white;
+}
+
+main {
+  scroll-behavior: smooth;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: white;
+  padding-top: 20px;
+  height: 500px;
+  background-color: rgba(34, 66, 101, 0.685);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+main .featured-sign {
+  font-weight: 200;
+  margin: 0 auto 50px auto;
+}
+main section {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 200px;
+  margin-bottom: 100px;
+}
+main section .section-elem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 250px;
+  width: 300px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+main section .section-elem .article-img {
+  height: 200px;
+  width: 300px;
+  margin-bottom: 10px;
+}
+main section .section-elem h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 200;
+}
+main section .section-elem p {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.616);
+}
+main button {
+  padding: 7px 15px;
+  background: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+main button:hover {
+  border: 2px solid black;
+}
+main button:hover a {
+  color: black;
+}
+main button a {
+  font-size: 18px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  text-decoration: none;
+  color: white;
+}
+
+footer {
+  height: 200px;
+  background-color: rgba(34, 66, 101, 0.521);
+}
+footer .footer-container {
+  margin: 0 auto;
+  width: 80%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+}
+footer .footer-container .logo {
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+footer .footer-container .logo h1 {
+  margin: 0 auto 10px auto;
+  font-size: 40px;
+  font-family: "Playfair Display", serif;
+}
+footer .footer-container .logo .media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+footer .footer-container .logo .media a {
+  font-size: 30px;
+  color: white;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+footer .footer-container .logo .media a:hover {
+  color: black;
+}
+footer .footer-container .links {
+  width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+footer .footer-container .links h1 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 200;
+  margin: 0 0 20px 0;
+}
+footer .footer-container .links ul {
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+}
+footer .footer-container .links ul li {
+  padding-bottom: 15px;
+}
+footer .footer-container .links ul li a {
+  color: white;
+  position: relative;
+  text-decoration: none;
+  font-family: sans-serif;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  font-size: 18px;
+}
+footer .footer-container .links ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  -webkit-transition: width 0.35s;
+  transition: width 0.35s;
+}
+footer .footer-container .links ul li a:hover:before {
+  width: 100%;
+}
+footer .footer-container .links ul li a:hover {
+  color: black;
+}
+footer .footer-container .contacts {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+footer .footer-container .contacts h1 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 200;
+  margin: 0 0 20px 0;
+}
+footer .footer-container .contacts ul {
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+}
+footer .footer-container .contacts ul li {
+  padding-bottom: 15px;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+footer .footer-container .feedback {
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+footer .footer-container .feedback h1 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 200;
+  margin: 0 0 20px 0;
+}
+footer .footer-container .feedback form label {
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-family: sans-serif;
+}
+footer .footer-container .feedback form input {
+  color: white;
+  background: none;
+  border-radius: 3px;
+  border: 2px solid rgba(34, 66, 101, 0.521);
+  outline: none;
+  margin-top: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  padding-left: 5px;
+  font-family: sans-serif;
+}
+footer .footer-container .feedback form input::-webkit-input-placeholder {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+footer .footer-container .feedback form input::-moz-placeholder {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+footer .footer-container .feedback form input:-ms-input-placeholder {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+footer .footer-container .feedback form input::-ms-input-placeholder {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+footer .footer-container .feedback form input::placeholder {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+footer .footer-container .feedback form button {
+  border: 2px solid rgba(34, 66, 101, 0.521);
+  background: none;
+  border-radius: 3px;
+  color: white;
+  margin-top: 5px;
+  display: block;
+  height: 35px;
+  width: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+footer .footer-container .feedback form button:hover {
+  background-color: rgba(34, 66, 101, 0.521);
+}
