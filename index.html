@@ -13,7 +13,21 @@
       <a href="#container" class="page-up" id="pageUp"></a>
       <header>
         <div class="header-container">
+          <div class="menu">
+            <nav>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About</a></li>
+              </ul>
+            </nav>
+          </div>
           <nav class="navigation">
+            <div class="burger">
+              <span class="bar1"></span>
+              <span class="bar2"></span>
+              <span class="bar3"></span>
+            </div>
             <ul class="nav-menu">
               <li>
                 <a class="main-link" href="">Home</a>
@@ -37,21 +51,26 @@
         <h1 class="featured-sign">/ Featured</h1>
         <section>
           <article class="section-elem">
-            <img class="article-img" src="./images/first-product.jpg" alt="" />
+            <a class="image-link" href=""
+              ><img class="article-img" src="./images/first-product.jpg" alt=""
+            /></a>
             <h3>High-Back Bed</h3>
             <p>119.99$</p>
           </article>
           <article class="section-elem">
-            <img
-              class="article-img"
-              src="./images/second-product.jpeg"
-              alt=""
-            />
+            <a class="image-link" href=""
+              ><img
+                class="article-img"
+                src="./images/second-product.jpeg"
+                alt=""
+            /></a>
             <h3>Utopia Bed</h3>
             <p>89.99$</p>
           </article>
           <article class="section-elem">
-            <img class="article-img" src="./images/third-product.jpg" alt="" />
+            <a class="image-link" href=""
+              ><img class="article-img" src="./images/third-product.jpg" alt=""
+            /></a>
             <h3>Barocco Bed</h3>
             <p>179.99$</p>
           </article>
@@ -97,7 +116,12 @@
             <h1>Feedback</h1>
             <form action="">
               <label for="email">We will contact you!</label>
-              <input placeholder="Enter your email:" id="email" type="email" />
+              <input
+                autocomplete="off"
+                placeholder="Enter your email:"
+                id="email"
+                type="email"
+              />
               <button>Send</button>
             </form>
           </article>

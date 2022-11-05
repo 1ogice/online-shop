@@ -6,7 +6,6 @@ body {
   background-color: black;
   padding: 0;
   margin: 0;
-  scroll-behavior: smooth;
 }
 
 .page-up {
@@ -16,7 +15,7 @@ body {
   border: 2px solid white;
   border-radius: 50%;
   left: 40px;
-  bottom: 100px;
+  bottom: 140px;
   transition: 0.3s all;
   animation-name: show_page_up;
   animation-duration: 1s;
@@ -66,12 +65,64 @@ header {
 .header-container {
   width: 80%;
   margin: 0 auto;
+  .menu {
+    display: none;
+    position: fixed;
+    background-color: rgba(34, 66, 101, 0.885);
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 30%;
+    z-index: 1000;
+    transition: 0.3s all;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    transform: translateX(100%);
+    &.active {
+      transform: translateX(0%);
+    }
+    ul {
+      margin: 0;
+      width: 100%;
+      list-style-type: none;
+      padding: 0;
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid white;
+        height: 30px;
+        a {
+          text-decoration: none;
+          color: white;
+          font-family: sans-serif;
+        }
+      }
+    }
+  }
   .navigation {
     top: 30px;
     z-index: 10;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .burger {
+      display: none;
+      &.active {
+        .bar1 {
+          top: 6.5px;
+          transform: rotate(45deg);
+        }
+        .bar2 {
+          opacity: 0;
+        }
+        .bar3 {
+          margin-bottom: 5px;
+          bottom: 7px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
     .nav-menu {
       padding: 0;
       margin: 0;
@@ -160,7 +211,7 @@ header {
 }
 
 main {
-  scroll-behavior: smooth;
+  border-top: 1px solid white;
   font-family: $main-font;
   color: white;
   padding-top: 20px;
@@ -185,13 +236,20 @@ main {
       align-items: center;
       height: 250px;
       width: 300px;
-      //   border: 1px solid black;
       border-radius: 3px;
       overflow: hidden;
+      transition: 0.3s all;
+      .image-link {
+        height: 200px;
+      }
       .article-img {
         height: 200px;
         width: 300px;
         margin-bottom: 10px;
+        transition: 0.3s all;
+        &:hover {
+          transform: scale(0.9, 0.9);
+        }
       }
       h3 {
         margin: 0;
@@ -228,6 +286,7 @@ main {
 }
 
 footer {
+  border-top: 1px solid white;
   height: 200px;
   background-color: rgba(34, 66, 101, 0.521);
   .footer-container {
@@ -236,6 +295,7 @@ footer {
     height: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: white;
     .logo {
       width: 250px;
@@ -367,6 +427,497 @@ footer {
           cursor: pointer;
           &:hover {
             background-color: rgba(34, 66, 101, 0.521);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .page-up {
+    width: 40px;
+    height: 40px;
+    bottom: 130px;
+    &::after {
+      width: 15px;
+      height: 15px;
+      left: 12px;
+      top: 23px;
+    }
+  }
+
+  header {
+    height: 400px;
+  }
+
+  .header-container {
+    width: 90%;
+    .navigation {
+      .nav-menu {
+        li {
+          padding-right: 35px;
+          a {
+            font-size: 15px;
+          }
+        }
+      }
+      h1 {
+        font-size: 35px;
+        transform: translate(-50%, -5%);
+      }
+      button {
+        .icon-basket {
+          font-size: 20px;
+        }
+      }
+    }
+    section {
+      margin-top: 80px;
+      .header-sign {
+        font-size: 70px;
+      }
+      p {
+        font-size: 16px;
+      }
+      .show-btn {
+        font-size: 10px;
+      }
+    }
+  }
+
+  main {
+    padding-top: 20px;
+    height: 420px;
+    .featured-sign {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+    section {
+      width: 90%;
+      height: 200px;
+      margin-bottom: 50px;
+      .section-elem {
+        height: 250px;
+        width: 250px;
+        .image-link {
+          height: 150px;
+        }
+        .article-img {
+          height: 150px;
+          width: 250px;
+        }
+        h3 {
+          font-size: 16px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+    button {
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+
+  footer {
+    height: 180px;
+    .footer-container {
+      width: 90%;
+      .logo {
+        width: 200px;
+        h1 {
+          font-size: 35px;
+        }
+        .media {
+          a {
+            font-size: 25px;
+          }
+        }
+      }
+      .links {
+        width: 100px;
+        h1 {
+          font-size: 22px;
+        }
+        ul {
+          li {
+            padding-bottom: 10px;
+            a {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .contacts {
+        width: 180px;
+        h1 {
+          font-size: 22px;
+        }
+        ul {
+          li {
+            padding-bottom: 10px;
+            font-size: 12px;
+            height: 18px;
+          }
+        }
+      }
+      .feedback {
+        width: 300px;
+        h1 {
+          font-size: 22px;
+        }
+        form {
+          label {
+            font-size: 16px;
+          }
+          button {
+            height: 30px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .page-up {
+    width: 35px;
+    height: 35px;
+    bottom: 115px;
+    &::after {
+      width: 12px;
+      height: 12px;
+      left: 11px;
+      top: 20px;
+    }
+  }
+
+  header {
+    height: 350px;
+  }
+
+  .header-container {
+    .navigation {
+      .nav-menu {
+        li {
+          padding-right: 15px;
+          .main-link {
+            border: 2px solid white;
+          }
+          a {
+            font-size: 14px;
+          }
+        }
+      }
+      h1 {
+        font-size: 30px;
+        transform: translate(-50%, -5%);
+      }
+      button {
+        .icon-basket {
+          font-size: 18px;
+        }
+      }
+    }
+    section {
+      margin-top: 70px;
+      .header-sign {
+        font-size: 60px;
+      }
+      p {
+        font-size: 14px;
+      }
+      .show-btn {
+        font-size: 8px;
+        letter-spacing: 2px;
+        border: 2px solid white;
+      }
+    }
+  }
+
+  main {
+    padding-top: 10px;
+    height: 340px;
+    .featured-sign {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    section {
+      height: 180px;
+      margin-bottom: 0;
+      .section-elem {
+        height: 150px;
+        width: 180px;
+        .image-link {
+          height: 100px;
+        }
+        .article-img {
+          height: 100px;
+          width: 180px;
+        }
+        h3 {
+          font-size: 14px;
+        }
+        p {
+          font-size: 10px;
+        }
+      }
+    }
+    button {
+      border: 2px solid white;
+      a {
+        font-size: 12px;
+      }
+    }
+  }
+
+  footer {
+    height: 160px;
+    .footer-container {
+      width: 90%;
+      .logo {
+        width: 160px;
+        h1 {
+          font-size: 28px;
+        }
+        .media {
+          a {
+            font-size: 18px;
+          }
+        }
+      }
+      .links {
+        width: 50px;
+        h1 {
+          font-size: 18px;
+        }
+        ul {
+          li {
+            padding-bottom: 5px;
+            a {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+      .contacts {
+        width: 100px;
+        h1 {
+          font-size: 18px;
+        }
+        ul {
+          li {
+            display: flex;
+            align-items: center;
+            padding-bottom: 5px;
+            font-size: 10px;
+            height: 18px;
+          }
+        }
+      }
+      .feedback {
+        width: 250px;
+        h1 {
+          font-size: 18px;
+          margin-bottom: 6px;
+        }
+        form {
+          label {
+            font-size: 12px;
+          }
+          input {
+            height: 25px;
+          }
+          button {
+            height: 25px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .page-up {
+    width: 30px;
+    height: 30px;
+    left: 10px;
+    bottom: 75px;
+    &::after {
+      width: 10px;
+      height: 10px;
+      left: 9px;
+      top: 18px;
+    }
+  }
+
+  header {
+    height: 300px;
+  }
+
+  .header-container {
+    .menu {
+      display: block;
+    }
+    .navigation {
+      .nav-menu {
+        display: none;
+      }
+      .burger {
+        position: relative;
+        top: 3px;
+        display: flex;
+        flex-direction: column;
+        .bar1,
+        .bar2,
+        .bar3 {
+          position: relative;
+          height: 2px;
+          width: 30px;
+          background-color: white;
+          margin-bottom: 5px;
+          border-radius: 5px;
+        }
+        .bar1 {
+          transition: 0.3s all;
+          top: 0;
+          transform: rotate(-0deg);
+        }
+        .bar2 {
+          transition: 0.3s all;
+          opacity: 1;
+        }
+        .bar3 {
+          transition: 0.3s all;
+          bottom: 0;
+          transform: rotate(-0deg);
+        }
+      }
+      h1 {
+        font-size: 26px;
+      }
+      button {
+        .icon-basket {
+          font-size: 16px;
+        }
+      }
+    }
+    section {
+      margin-top: 60px;
+      .header-sign {
+        font-size: 50px;
+      }
+      p {
+        font-size: 12px;
+      }
+      .show-btn {
+        font-size: 6px;
+      }
+    }
+  }
+
+  main {
+    padding-top: 8px;
+    height: 250px;
+    .featured-sign {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+    section {
+      height: 140px;
+      .section-elem {
+        height: 150px;
+        width: 140px;
+        .image-link {
+          height: 75px;
+        }
+        .article-img {
+          height: 75px;
+          width: 140px;
+        }
+        h3 {
+          font-size: 10px;
+        }
+        p {
+          font-size: 8px;
+        }
+      }
+    }
+    button {
+      padding: 3px 12px;
+      a {
+        font-size: 10px;
+      }
+    }
+  }
+
+  footer {
+    height: 110px;
+    .footer-container {
+      width: 90%;
+      .logo {
+        width: 130px;
+        h1 {
+          font-size: 24px;
+          margin-bottom: 5px;
+        }
+        .media {
+          a {
+            font-size: 16px;
+          }
+        }
+      }
+      .links {
+        width: 45px;
+        h1 {
+          font-size: 16px;
+          margin-bottom: 5px;
+        }
+        ul {
+          li {
+            padding-bottom: 5px;
+            a {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+      .contacts {
+        width: 95px;
+        h1 {
+          font-size: 16px;
+          margin-bottom: 5px;
+        }
+        ul {
+          li {
+            padding-bottom: 5px;
+            font-size: 10px;
+            height: 18px;
+          }
+        }
+      }
+      .feedback {
+        width: 180px;
+        h1 {
+          font-size: 16px;
+          margin-bottom: 0;
+        }
+        form {
+          label {
+            font-size: 10px;
+          }
+          input {
+            height: 20px;
+            font-size: 10px;
+          }
+          button {
+            height: 20px;
+            font-size: 12px;
           }
         }
       }

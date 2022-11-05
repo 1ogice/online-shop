@@ -3,7 +3,6 @@ body {
   background-color: black;
   padding: 0;
   margin: 0;
-  scroll-behavior: smooth;
 }
 
 .page-up {
@@ -13,7 +12,7 @@ body {
   border: 2px solid white;
   border-radius: 50%;
   left: 40px;
-  bottom: 100px;
+  bottom: 140px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   -webkit-animation-name: show_page_up;
@@ -80,6 +79,50 @@ header {
   width: 80%;
   margin: 0 auto;
 }
+.header-container .menu {
+  display: none;
+  position: fixed;
+  background-color: rgba(34, 66, 101, 0.885);
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 30%;
+  z-index: 1000;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.header-container .menu.active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+.header-container .menu ul {
+  margin: 0;
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+}
+.header-container .menu ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid white;
+  height: 30px;
+}
+.header-container .menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+}
 .header-container .navigation {
   top: 30px;
   z-index: 10;
@@ -92,6 +135,23 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+.header-container .navigation .burger {
+  display: none;
+}
+.header-container .navigation .burger.active .bar1 {
+  top: 6.5px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.header-container .navigation .burger.active .bar2 {
+  opacity: 0;
+}
+.header-container .navigation .burger.active .bar3 {
+  margin-bottom: 5px;
+  bottom: 7px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 .header-container .navigation .nav-menu {
   padding: 0;
@@ -184,7 +244,7 @@ header {
 }
 
 main {
-  scroll-behavior: smooth;
+  border-top: 1px solid white;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: white;
   padding-top: 20px;
@@ -231,11 +291,22 @@ main section .section-elem {
   width: 300px;
   border-radius: 3px;
   overflow: hidden;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+main section .section-elem .image-link {
+  height: 200px;
 }
 main section .section-elem .article-img {
   height: 200px;
   width: 300px;
   margin-bottom: 10px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+main section .section-elem .article-img:hover {
+  -webkit-transform: scale(0.9, 0.9);
+          transform: scale(0.9, 0.9);
 }
 main section .section-elem h3 {
   margin: 0;
@@ -271,6 +342,7 @@ main button a {
 }
 
 footer {
+  border-top: 1px solid white;
   height: 200px;
   background-color: rgba(34, 66, 101, 0.521);
 }
@@ -284,6 +356,9 @@ footer .footer-container {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: white;
 }
 footer .footer-container .logo {
@@ -458,4 +533,451 @@ footer .footer-container .feedback form button {
 }
 footer .footer-container .feedback form button:hover {
   background-color: rgba(34, 66, 101, 0.521);
+}
+
+@media (max-width: 1024px) {
+  .page-up {
+    width: 40px;
+    height: 40px;
+    bottom: 130px;
+  }
+  .page-up::after {
+    width: 15px;
+    height: 15px;
+    left: 12px;
+    top: 23px;
+  }
+  header {
+    height: 400px;
+  }
+  .header-container {
+    width: 90%;
+  }
+  .header-container .navigation .nav-menu li {
+    padding-right: 35px;
+  }
+  .header-container .navigation .nav-menu li a {
+    font-size: 15px;
+  }
+  .header-container .navigation h1 {
+    font-size: 35px;
+    -webkit-transform: translate(-50%, -5%);
+            transform: translate(-50%, -5%);
+  }
+  .header-container .navigation button .icon-basket {
+    font-size: 20px;
+  }
+  .header-container section {
+    margin-top: 80px;
+  }
+  .header-container section .header-sign {
+    font-size: 70px;
+  }
+  .header-container section p {
+    font-size: 16px;
+  }
+  .header-container section .show-btn {
+    font-size: 10px;
+  }
+  main {
+    padding-top: 20px;
+    height: 420px;
+  }
+  main .featured-sign {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  main section {
+    width: 90%;
+    height: 200px;
+    margin-bottom: 50px;
+  }
+  main section .section-elem {
+    height: 250px;
+    width: 250px;
+  }
+  main section .section-elem .image-link {
+    height: 150px;
+  }
+  main section .section-elem .article-img {
+    height: 150px;
+    width: 250px;
+  }
+  main section .section-elem h3 {
+    font-size: 16px;
+  }
+  main section .section-elem p {
+    font-size: 12px;
+  }
+  main button a {
+    font-size: 14px;
+  }
+  footer {
+    height: 180px;
+  }
+  footer .footer-container {
+    width: 90%;
+  }
+  footer .footer-container .logo {
+    width: 200px;
+  }
+  footer .footer-container .logo h1 {
+    font-size: 35px;
+  }
+  footer .footer-container .logo .media a {
+    font-size: 25px;
+  }
+  footer .footer-container .links {
+    width: 100px;
+  }
+  footer .footer-container .links h1 {
+    font-size: 22px;
+  }
+  footer .footer-container .links ul li {
+    padding-bottom: 10px;
+  }
+  footer .footer-container .links ul li a {
+    font-size: 12px;
+  }
+  footer .footer-container .contacts {
+    width: 180px;
+  }
+  footer .footer-container .contacts h1 {
+    font-size: 22px;
+  }
+  footer .footer-container .contacts ul li {
+    padding-bottom: 10px;
+    font-size: 12px;
+    height: 18px;
+  }
+  footer .footer-container .feedback {
+    width: 300px;
+  }
+  footer .footer-container .feedback h1 {
+    font-size: 22px;
+  }
+  footer .footer-container .feedback form label {
+    font-size: 16px;
+  }
+  footer .footer-container .feedback form button {
+    height: 30px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .page-up {
+    width: 35px;
+    height: 35px;
+    bottom: 115px;
+  }
+  .page-up::after {
+    width: 12px;
+    height: 12px;
+    left: 11px;
+    top: 20px;
+  }
+  header {
+    height: 350px;
+  }
+  .header-container .navigation .nav-menu li {
+    padding-right: 15px;
+  }
+  .header-container .navigation .nav-menu li .main-link {
+    border: 2px solid white;
+  }
+  .header-container .navigation .nav-menu li a {
+    font-size: 14px;
+  }
+  .header-container .navigation h1 {
+    font-size: 30px;
+    -webkit-transform: translate(-50%, -5%);
+            transform: translate(-50%, -5%);
+  }
+  .header-container .navigation button .icon-basket {
+    font-size: 18px;
+  }
+  .header-container section {
+    margin-top: 70px;
+  }
+  .header-container section .header-sign {
+    font-size: 60px;
+  }
+  .header-container section p {
+    font-size: 14px;
+  }
+  .header-container section .show-btn {
+    font-size: 8px;
+    letter-spacing: 2px;
+    border: 2px solid white;
+  }
+  main {
+    padding-top: 10px;
+    height: 340px;
+  }
+  main .featured-sign {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  main section {
+    height: 180px;
+    margin-bottom: 0;
+  }
+  main section .section-elem {
+    height: 150px;
+    width: 180px;
+  }
+  main section .section-elem .image-link {
+    height: 100px;
+  }
+  main section .section-elem .article-img {
+    height: 100px;
+    width: 180px;
+  }
+  main section .section-elem h3 {
+    font-size: 14px;
+  }
+  main section .section-elem p {
+    font-size: 10px;
+  }
+  main button {
+    border: 2px solid white;
+  }
+  main button a {
+    font-size: 12px;
+  }
+  footer {
+    height: 160px;
+  }
+  footer .footer-container {
+    width: 90%;
+  }
+  footer .footer-container .logo {
+    width: 160px;
+  }
+  footer .footer-container .logo h1 {
+    font-size: 28px;
+  }
+  footer .footer-container .logo .media a {
+    font-size: 18px;
+  }
+  footer .footer-container .links {
+    width: 50px;
+  }
+  footer .footer-container .links h1 {
+    font-size: 18px;
+  }
+  footer .footer-container .links ul li {
+    padding-bottom: 5px;
+  }
+  footer .footer-container .links ul li a {
+    font-size: 10px;
+  }
+  footer .footer-container .contacts {
+    width: 100px;
+  }
+  footer .footer-container .contacts h1 {
+    font-size: 18px;
+  }
+  footer .footer-container .contacts ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-bottom: 5px;
+    font-size: 10px;
+    height: 18px;
+  }
+  footer .footer-container .feedback {
+    width: 250px;
+  }
+  footer .footer-container .feedback h1 {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  footer .footer-container .feedback form label {
+    font-size: 12px;
+  }
+  footer .footer-container .feedback form input {
+    height: 25px;
+  }
+  footer .footer-container .feedback form button {
+    height: 25px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 600px) {
+  .page-up {
+    width: 30px;
+    height: 30px;
+    left: 10px;
+    bottom: 75px;
+  }
+  .page-up::after {
+    width: 10px;
+    height: 10px;
+    left: 9px;
+    top: 18px;
+  }
+  header {
+    height: 300px;
+  }
+  .header-container .menu {
+    display: block;
+  }
+  .header-container .navigation .nav-menu {
+    display: none;
+  }
+  .header-container .navigation .burger {
+    position: relative;
+    top: 3px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header-container .navigation .burger .bar1,
+.header-container .navigation .burger .bar2,
+.header-container .navigation .burger .bar3 {
+    position: relative;
+    height: 2px;
+    width: 30px;
+    background-color: white;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+  .header-container .navigation .burger .bar1 {
+    -webkit-transition: 0.3s all;
+    transition: 0.3s all;
+    top: 0;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  .header-container .navigation .burger .bar2 {
+    -webkit-transition: 0.3s all;
+    transition: 0.3s all;
+    opacity: 1;
+  }
+  .header-container .navigation .burger .bar3 {
+    -webkit-transition: 0.3s all;
+    transition: 0.3s all;
+    bottom: 0;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  .header-container .navigation h1 {
+    font-size: 26px;
+  }
+  .header-container .navigation button .icon-basket {
+    font-size: 16px;
+  }
+  .header-container section {
+    margin-top: 60px;
+  }
+  .header-container section .header-sign {
+    font-size: 50px;
+  }
+  .header-container section p {
+    font-size: 12px;
+  }
+  .header-container section .show-btn {
+    font-size: 6px;
+  }
+  main {
+    padding-top: 8px;
+    height: 250px;
+  }
+  main .featured-sign {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  main section {
+    height: 140px;
+  }
+  main section .section-elem {
+    height: 150px;
+    width: 140px;
+  }
+  main section .section-elem .image-link {
+    height: 75px;
+  }
+  main section .section-elem .article-img {
+    height: 75px;
+    width: 140px;
+  }
+  main section .section-elem h3 {
+    font-size: 10px;
+  }
+  main section .section-elem p {
+    font-size: 8px;
+  }
+  main button {
+    padding: 3px 12px;
+  }
+  main button a {
+    font-size: 10px;
+  }
+  footer {
+    height: 110px;
+  }
+  footer .footer-container {
+    width: 90%;
+  }
+  footer .footer-container .logo {
+    width: 130px;
+  }
+  footer .footer-container .logo h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  footer .footer-container .logo .media a {
+    font-size: 16px;
+  }
+  footer .footer-container .links {
+    width: 45px;
+  }
+  footer .footer-container .links h1 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  footer .footer-container .links ul li {
+    padding-bottom: 5px;
+  }
+  footer .footer-container .links ul li a {
+    font-size: 10px;
+  }
+  footer .footer-container .contacts {
+    width: 95px;
+  }
+  footer .footer-container .contacts h1 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  footer .footer-container .contacts ul li {
+    padding-bottom: 5px;
+    font-size: 10px;
+    height: 18px;
+  }
+  footer .footer-container .feedback {
+    width: 180px;
+  }
+  footer .footer-container .feedback h1 {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+  footer .footer-container .feedback form label {
+    font-size: 10px;
+  }
+  footer .footer-container .feedback form input {
+    height: 20px;
+    font-size: 10px;
+  }
+  footer .footer-container .feedback form button {
+    height: 20px;
+    font-size: 12px;
+  }
 }
