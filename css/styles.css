@@ -86,7 +86,7 @@ header {
   top: 0;
   right: 0;
   height: 100%;
-  width: 30%;
+  width: 40%;
   z-index: 1000;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
@@ -343,8 +343,11 @@ main button a {
 
 footer {
   border-top: 1px solid white;
-  height: 200px;
+  height: auto;
   background-color: rgba(34, 66, 101, 0.521);
+}
+footer .accordion {
+  display: none;
 }
 footer .footer-container {
   margin: 0 auto;
@@ -613,7 +616,7 @@ footer .footer-container .feedback form button:hover {
     font-size: 14px;
   }
   footer {
-    height: 180px;
+    height: auto;
   }
   footer .footer-container {
     width: 90%;
@@ -746,7 +749,7 @@ footer .footer-container .feedback form button:hover {
     font-size: 12px;
   }
   footer {
-    height: 160px;
+    height: auto;
   }
   footer .footer-container {
     width: 90%;
@@ -809,19 +812,12 @@ footer .footer-container .feedback form button:hover {
 }
 @media (max-width: 600px) {
   .page-up {
-    width: 30px;
-    height: 30px;
-    left: 10px;
-    bottom: 75px;
-  }
-  .page-up::after {
-    width: 10px;
-    height: 10px;
-    left: 9px;
-    top: 18px;
+    display: none;
   }
   header {
     height: 300px;
+    background-position: 50% -150px;
+    background-size: 100% 100%;
   }
   .header-container .menu {
     display: block;
@@ -889,25 +885,34 @@ footer .footer-container .feedback form button:hover {
   }
   main {
     padding-top: 8px;
-    height: 250px;
+    height: auto;
+    padding-bottom: 30px;
   }
   main .featured-sign {
     font-size: 20px;
     margin-bottom: 16px;
   }
   main section {
-    height: 140px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: auto;
   }
   main section .section-elem {
-    height: 150px;
-    width: 140px;
+    height: 225px;
+    width: 80%;
   }
   main section .section-elem .image-link {
-    height: 75px;
+    width: 100%;
+    height: 175px;
   }
   main section .section-elem .article-img {
-    height: 75px;
-    width: 140px;
+    height: 175px;
+    width: 100%;
   }
   main section .section-elem h3 {
     font-size: 10px;
@@ -922,62 +927,139 @@ footer .footer-container .feedback form button:hover {
     font-size: 10px;
   }
   footer {
-    height: 110px;
+    height: auto;
+  }
+  footer .accordion {
+    display: block;
   }
   footer .footer-container {
-    width: 90%;
+    display: none;
   }
-  footer .footer-container .logo {
-    width: 130px;
-  }
-  footer .footer-container .logo h1 {
-    font-size: 24px;
-    margin-bottom: 5px;
-  }
-  footer .footer-container .logo .media a {
-    font-size: 16px;
-  }
-  footer .footer-container .links {
-    width: 45px;
-  }
-  footer .footer-container .links h1 {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  footer .footer-container .links ul li {
-    padding-bottom: 5px;
-  }
-  footer .footer-container .links ul li a {
-    font-size: 10px;
-  }
-  footer .footer-container .contacts {
-    width: 95px;
-  }
-  footer .footer-container .contacts h1 {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  footer .footer-container .contacts ul li {
-    padding-bottom: 5px;
-    font-size: 10px;
-    height: 18px;
-  }
-  footer .footer-container .feedback {
-    width: 180px;
-  }
-  footer .footer-container .feedback h1 {
-    font-size: 16px;
-    margin-bottom: 0;
-  }
-  footer .footer-container .feedback form label {
-    font-size: 10px;
-  }
-  footer .footer-container .feedback form input {
-    height: 20px;
-    font-size: 10px;
-  }
-  footer .footer-container .feedback form button {
-    height: 20px;
-    font-size: 12px;
-  }
+}
+.accordion {
+  width: 90%;
+  margin: 0 auto;
+  color: black;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.accordion .container {
+  position: relative;
+  margin: 10px 10px;
+}
+.accordion .container h1 {
+  font-size: 16px;
+  margin: 0;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 200;
+}
+.accordion .container.active .logo {
+  height: 35px;
+}
+.accordion .container.active .contacts {
+  height: 60px;
+}
+.accordion .container.active .links {
+  height: 55px;
+}
+.accordion .container.active .feedback {
+  height: 90px;
+}
+.accordion .logo .media {
+  padding-top: 10px;
+}
+.accordion .logo .media a {
+  font-size: 20px;
+  color: white;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+.accordion .logo .media a:hover {
+  color: black;
+}
+.accordion .contacts ul {
+  list-style-type: none;
+  padding: 0 0 0 10px;
+  font-family: sans-serif;
+  font-size: 12px;
+  color: white;
+}
+.accordion .links ul {
+  list-style-type: none;
+  padding: 0 0 0 10px;
+}
+.accordion .links ul li a {
+  color: white;
+  font-size: 12px;
+  font-family: sans-serif;
+  text-decoration: none;
+  position: relative;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.accordion .links ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  -webkit-transition: width 0.35s;
+  transition: width 0.35s;
+}
+.accordion .links ul li a:hover:before {
+  width: 100%;
+}
+.accordion .links ul li a:hover {
+  color: black;
+}
+.accordion .feedback form {
+  padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.accordion .feedback form input {
+  height: 30px;
+  color: white;
+  background: none;
+  border-radius: 3px;
+  border: 2px solid rgba(34, 66, 101, 0.521);
+  outline: none;
+}
+.accordion .feedback form button {
+  border: 2px solid rgba(34, 66, 101, 0.521);
+  background: none;
+  border-radius: 3px;
+  color: white;
+  margin-top: 5px;
+  height: 35px;
+}
+.accordion .feedback form button:hover {
+  background-color: rgba(34, 66, 101, 0.521);
+}
+.accordion .logo,
+.accordion .contacts,
+.accordion .links,
+.accordion .feedback {
+  position: relative;
+  height: 0;
+  font-size: 10px;
+  text-align: justify;
+  width: 100%;
+  overflow: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.accordion hr {
+  width: 100;
+  margin-left: 0;
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
