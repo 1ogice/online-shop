@@ -288,7 +288,6 @@ main section .section-elem {
       -ms-flex-align: center;
           align-items: center;
   height: 250px;
-  width: 300px;
   border-radius: 3px;
   overflow: hidden;
   -webkit-transition: 0.3s all;
@@ -365,7 +364,6 @@ footer .footer-container {
   color: white;
 }
 footer .footer-container .logo {
-  width: 250px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -397,7 +395,6 @@ footer .footer-container .logo .media a:hover {
   color: black;
 }
 footer .footer-container .links {
-  width: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -446,7 +443,6 @@ footer .footer-container .links ul li a:hover {
   color: black;
 }
 footer .footer-container .contacts {
-  width: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -471,7 +467,6 @@ footer .footer-container .contacts ul li {
   font-family: sans-serif;
 }
 footer .footer-container .feedback {
-  width: 350px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -597,7 +592,6 @@ footer .footer-container .feedback form button:hover {
   }
   main section .section-elem {
     height: 250px;
-    width: 250px;
   }
   main section .section-elem .image-link {
     height: 150px;
@@ -615,23 +609,14 @@ footer .footer-container .feedback form button:hover {
   main button a {
     font-size: 14px;
   }
-  footer {
-    height: auto;
-  }
   footer .footer-container {
     width: 90%;
-  }
-  footer .footer-container .logo {
-    width: 200px;
   }
   footer .footer-container .logo h1 {
     font-size: 35px;
   }
   footer .footer-container .logo .media a {
     font-size: 25px;
-  }
-  footer .footer-container .links {
-    width: 100px;
   }
   footer .footer-container .links h1 {
     font-size: 22px;
@@ -642,9 +627,6 @@ footer .footer-container .feedback form button:hover {
   footer .footer-container .links ul li a {
     font-size: 12px;
   }
-  footer .footer-container .contacts {
-    width: 180px;
-  }
   footer .footer-container .contacts h1 {
     font-size: 22px;
   }
@@ -652,9 +634,6 @@ footer .footer-container .feedback form button:hover {
     padding-bottom: 10px;
     font-size: 12px;
     height: 18px;
-  }
-  footer .footer-container .feedback {
-    width: 300px;
   }
   footer .footer-container .feedback h1 {
     font-size: 22px;
@@ -668,149 +647,6 @@ footer .footer-container .feedback form button:hover {
   }
 }
 @media (max-width: 768px) {
-  .page-up {
-    width: 35px;
-    height: 35px;
-    bottom: 115px;
-  }
-  .page-up::after {
-    width: 12px;
-    height: 12px;
-    left: 11px;
-    top: 20px;
-  }
-  header {
-    height: 350px;
-  }
-  .header-container .navigation .nav-menu li {
-    padding-right: 15px;
-  }
-  .header-container .navigation .nav-menu li .main-link {
-    border: 2px solid white;
-  }
-  .header-container .navigation .nav-menu li a {
-    font-size: 14px;
-  }
-  .header-container .navigation h1 {
-    font-size: 30px;
-    -webkit-transform: translate(-50%, -5%);
-            transform: translate(-50%, -5%);
-  }
-  .header-container .navigation button .icon-basket {
-    font-size: 18px;
-  }
-  .header-container section {
-    margin-top: 70px;
-  }
-  .header-container section .header-sign {
-    font-size: 60px;
-  }
-  .header-container section p {
-    font-size: 14px;
-  }
-  .header-container section .show-btn {
-    font-size: 8px;
-    letter-spacing: 2px;
-    border: 2px solid white;
-  }
-  main {
-    padding-top: 10px;
-    height: 340px;
-  }
-  main .featured-sign {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  main section {
-    height: 180px;
-    margin-bottom: 0;
-  }
-  main section .section-elem {
-    height: 150px;
-    width: 180px;
-  }
-  main section .section-elem .image-link {
-    height: 100px;
-  }
-  main section .section-elem .article-img {
-    height: 100px;
-    width: 180px;
-  }
-  main section .section-elem h3 {
-    font-size: 14px;
-  }
-  main section .section-elem p {
-    font-size: 10px;
-  }
-  main button {
-    border: 2px solid white;
-  }
-  main button a {
-    font-size: 12px;
-  }
-  footer {
-    height: auto;
-  }
-  footer .footer-container {
-    width: 90%;
-  }
-  footer .footer-container .logo {
-    width: 160px;
-  }
-  footer .footer-container .logo h1 {
-    font-size: 28px;
-  }
-  footer .footer-container .logo .media a {
-    font-size: 18px;
-  }
-  footer .footer-container .links {
-    width: 50px;
-  }
-  footer .footer-container .links h1 {
-    font-size: 18px;
-  }
-  footer .footer-container .links ul li {
-    padding-bottom: 5px;
-  }
-  footer .footer-container .links ul li a {
-    font-size: 10px;
-  }
-  footer .footer-container .contacts {
-    width: 100px;
-  }
-  footer .footer-container .contacts h1 {
-    font-size: 18px;
-  }
-  footer .footer-container .contacts ul li {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding-bottom: 5px;
-    font-size: 10px;
-    height: 18px;
-  }
-  footer .footer-container .feedback {
-    width: 250px;
-  }
-  footer .footer-container .feedback h1 {
-    font-size: 18px;
-    margin-bottom: 6px;
-  }
-  footer .footer-container .feedback form label {
-    font-size: 12px;
-  }
-  footer .footer-container .feedback form input {
-    height: 25px;
-  }
-  footer .footer-container .feedback form button {
-    height: 25px;
-    font-size: 14px;
-  }
-}
-@media (max-width: 600px) {
   .page-up {
     display: none;
   }
@@ -845,22 +681,18 @@ footer .footer-container .feedback form button:hover {
     background-color: white;
     margin-bottom: 5px;
     border-radius: 5px;
-  }
-  .header-container .navigation .burger .bar1 {
     -webkit-transition: 0.3s all;
     transition: 0.3s all;
+  }
+  .header-container .navigation .burger .bar1 {
     top: 0;
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
   .header-container .navigation .burger .bar2 {
-    -webkit-transition: 0.3s all;
-    transition: 0.3s all;
     opacity: 1;
   }
   .header-container .navigation .burger .bar3 {
-    -webkit-transition: 0.3s all;
-    transition: 0.3s all;
     bottom: 0;
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -926,140 +758,133 @@ footer .footer-container .feedback form button:hover {
   main button a {
     font-size: 10px;
   }
-  footer {
-    height: auto;
-  }
   footer .accordion {
     display: block;
+    width: 90%;
+    margin: 0 auto;
+    color: black;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  footer .accordion .container {
+    position: relative;
+    margin: 10px 10px;
+  }
+  footer .accordion .container h1 {
+    font-size: 16px;
+    margin: 0;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 200;
+  }
+  footer .accordion .container.active .logo {
+    height: 35px;
+  }
+  footer .accordion .container.active .contacts {
+    height: 60px;
+  }
+  footer .accordion .container.active .links {
+    height: 55px;
+  }
+  footer .accordion .container.active .feedback {
+    height: 90px;
+  }
+  footer .accordion .logo .media {
+    padding-top: 10px;
+  }
+  footer .accordion .logo .media a {
+    font-size: 20px;
+    color: white;
+    -webkit-transition: 0.5s all;
+    transition: 0.5s all;
+  }
+  footer .accordion .logo .media a:hover {
+    color: black;
+  }
+  footer .accordion .contacts ul {
+    list-style-type: none;
+    padding: 0 0 0 10px;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: white;
+  }
+  footer .accordion .links ul {
+    list-style-type: none;
+    padding: 0 0 0 10px;
+  }
+  footer .accordion .links ul li a {
+    color: white;
+    font-size: 12px;
+    font-family: sans-serif;
+    text-decoration: none;
+    position: relative;
+    -webkit-transition: 0.3s all;
+    transition: 0.3s all;
+  }
+  footer .accordion .links ul li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    -webkit-transition: width 0.35s;
+    transition: width 0.35s;
+  }
+  footer .accordion .links ul li a:hover:before {
+    width: 100%;
+  }
+  footer .accordion .links ul li a:hover {
+    color: black;
+  }
+  footer .accordion .feedback form {
+    padding-top: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer .accordion .feedback form input {
+    height: 30px;
+    color: white;
+    background: none;
+    border-radius: 3px;
+    border: 2px solid rgba(34, 66, 101, 0.521);
+    outline: none;
+  }
+  footer .accordion .feedback form button {
+    border: 2px solid rgba(34, 66, 101, 0.521);
+    background: none;
+    border-radius: 3px;
+    color: white;
+    margin-top: 5px;
+    height: 35px;
+  }
+  footer .accordion .feedback form button:hover {
+    background-color: rgba(34, 66, 101, 0.521);
+  }
+  footer .accordion .logo,
+footer .accordion .contacts,
+footer .accordion .links,
+footer .accordion .feedback {
+    position: relative;
+    height: 0;
+    font-size: 10px;
+    width: 100%;
+    overflow: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  footer .accordion hr {
+    width: 100;
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   footer .footer-container {
     display: none;
   }
-}
-.accordion {
-  width: 90%;
-  margin: 0 auto;
-  color: black;
-  padding-bottom: 20px;
-  padding-top: 20px;
-}
-.accordion .container {
-  position: relative;
-  margin: 10px 10px;
-}
-.accordion .container h1 {
-  font-size: 16px;
-  margin: 0;
-  color: white;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 200;
-}
-.accordion .container.active .logo {
-  height: 35px;
-}
-.accordion .container.active .contacts {
-  height: 60px;
-}
-.accordion .container.active .links {
-  height: 55px;
-}
-.accordion .container.active .feedback {
-  height: 90px;
-}
-.accordion .logo .media {
-  padding-top: 10px;
-}
-.accordion .logo .media a {
-  font-size: 20px;
-  color: white;
-  -webkit-transition: 0.5s all;
-  transition: 0.5s all;
-}
-.accordion .logo .media a:hover {
-  color: black;
-}
-.accordion .contacts ul {
-  list-style-type: none;
-  padding: 0 0 0 10px;
-  font-family: sans-serif;
-  font-size: 12px;
-  color: white;
-}
-.accordion .links ul {
-  list-style-type: none;
-  padding: 0 0 0 10px;
-}
-.accordion .links ul li a {
-  color: white;
-  font-size: 12px;
-  font-family: sans-serif;
-  text-decoration: none;
-  position: relative;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
-}
-.accordion .links ul li a::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0;
-  height: 2px;
-  background-color: black;
-  -webkit-transition: width 0.35s;
-  transition: width 0.35s;
-}
-.accordion .links ul li a:hover:before {
-  width: 100%;
-}
-.accordion .links ul li a:hover {
-  color: black;
-}
-.accordion .feedback form {
-  padding-top: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-.accordion .feedback form input {
-  height: 30px;
-  color: white;
-  background: none;
-  border-radius: 3px;
-  border: 2px solid rgba(34, 66, 101, 0.521);
-  outline: none;
-}
-.accordion .feedback form button {
-  border: 2px solid rgba(34, 66, 101, 0.521);
-  background: none;
-  border-radius: 3px;
-  color: white;
-  margin-top: 5px;
-  height: 35px;
-}
-.accordion .feedback form button:hover {
-  background-color: rgba(34, 66, 101, 0.521);
-}
-.accordion .logo,
-.accordion .contacts,
-.accordion .links,
-.accordion .feedback {
-  position: relative;
-  height: 0;
-  font-size: 10px;
-  text-align: justify;
-  width: 100%;
-  overflow: hidden;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-.accordion hr {
-  width: 100;
-  margin-left: 0;
-  margin: 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }

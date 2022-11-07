@@ -235,7 +235,6 @@ main {
       flex-direction: column;
       align-items: center;
       height: 250px;
-      width: 300px;
       border-radius: 3px;
       overflow: hidden;
       transition: 0.3s all;
@@ -301,7 +300,6 @@ footer {
     align-items: center;
     color: white;
     .logo {
-      width: 250px;
       display: flex;
       flex-direction: column;
       h1 {
@@ -323,7 +321,6 @@ footer {
       }
     }
     .links {
-      width: 150px;
       display: flex;
       flex-direction: column;
       h1 {
@@ -365,7 +362,6 @@ footer {
       }
     }
     .contacts {
-      width: 200px;
       display: flex;
       flex-direction: column;
       h1 {
@@ -385,7 +381,6 @@ footer {
       }
     }
     .feedback {
-      width: 350px;
       display: flex;
       flex-direction: column;
       h1 {
@@ -502,7 +497,6 @@ footer {
       margin-bottom: 50px;
       .section-elem {
         height: 250px;
-        width: 250px;
         .image-link {
           height: 150px;
         }
@@ -526,11 +520,9 @@ footer {
   }
 
   footer {
-    height: auto;
     .footer-container {
       width: 90%;
       .logo {
-        width: 200px;
         h1 {
           font-size: 35px;
         }
@@ -541,7 +533,6 @@ footer {
         }
       }
       .links {
-        width: 100px;
         h1 {
           font-size: 22px;
         }
@@ -555,7 +546,6 @@ footer {
         }
       }
       .contacts {
-        width: 180px;
         h1 {
           font-size: 22px;
         }
@@ -568,7 +558,6 @@ footer {
         }
       }
       .feedback {
-        width: 300px;
         h1 {
           font-size: 22px;
         }
@@ -587,165 +576,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .page-up {
-    width: 35px;
-    height: 35px;
-    bottom: 115px;
-    &::after {
-      width: 12px;
-      height: 12px;
-      left: 11px;
-      top: 20px;
-    }
-  }
-
-  header {
-    height: 350px;
-  }
-
-  .header-container {
-    .navigation {
-      .nav-menu {
-        li {
-          padding-right: 15px;
-          .main-link {
-            border: 2px solid white;
-          }
-          a {
-            font-size: 14px;
-          }
-        }
-      }
-      h1 {
-        font-size: 30px;
-        transform: translate(-50%, -5%);
-      }
-      button {
-        .icon-basket {
-          font-size: 18px;
-        }
-      }
-    }
-    section {
-      margin-top: 70px;
-      .header-sign {
-        font-size: 60px;
-      }
-      p {
-        font-size: 14px;
-      }
-      .show-btn {
-        font-size: 8px;
-        letter-spacing: 2px;
-        border: 2px solid white;
-      }
-    }
-  }
-
-  main {
-    padding-top: 10px;
-    height: 340px;
-    .featured-sign {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-    section {
-      height: 180px;
-      margin-bottom: 0;
-      .section-elem {
-        height: 150px;
-        width: 180px;
-        .image-link {
-          height: 100px;
-        }
-        .article-img {
-          height: 100px;
-          width: 180px;
-        }
-        h3 {
-          font-size: 14px;
-        }
-        p {
-          font-size: 10px;
-        }
-      }
-    }
-    button {
-      border: 2px solid white;
-      a {
-        font-size: 12px;
-      }
-    }
-  }
-
-  footer {
-    height: auto;
-    .footer-container {
-      width: 90%;
-      .logo {
-        width: 160px;
-        h1 {
-          font-size: 28px;
-        }
-        .media {
-          a {
-            font-size: 18px;
-          }
-        }
-      }
-      .links {
-        width: 50px;
-        h1 {
-          font-size: 18px;
-        }
-        ul {
-          li {
-            padding-bottom: 5px;
-            a {
-              font-size: 10px;
-            }
-          }
-        }
-      }
-      .contacts {
-        width: 100px;
-        h1 {
-          font-size: 18px;
-        }
-        ul {
-          li {
-            display: flex;
-            align-items: center;
-            padding-bottom: 5px;
-            font-size: 10px;
-            height: 18px;
-          }
-        }
-      }
-      .feedback {
-        width: 250px;
-        h1 {
-          font-size: 18px;
-          margin-bottom: 6px;
-        }
-        form {
-          label {
-            font-size: 12px;
-          }
-          input {
-            height: 25px;
-          }
-          button {
-            height: 25px;
-            font-size: 14px;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 600px) {
   .page-up {
     display: none;
   }
@@ -778,18 +608,16 @@ footer {
           background-color: white;
           margin-bottom: 5px;
           border-radius: 5px;
+          transition: 0.3s all;
         }
         .bar1 {
-          transition: 0.3s all;
           top: 0;
           transform: rotate(-0deg);
         }
         .bar2 {
-          transition: 0.3s all;
           opacity: 1;
         }
         .bar3 {
-          transition: 0.3s all;
           bottom: 0;
           transform: rotate(-0deg);
         }
@@ -857,143 +685,137 @@ footer {
   }
 
   footer {
-    height: auto;
     .accordion {
       display: block;
+      width: 90%;
+      margin: 0 auto;
+      color: black;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      .container {
+        position: relative;
+        margin: 10px 10px;
+        h1 {
+          font-size: 16px;
+          margin: 0;
+          color: white;
+          font-family: $main-font;
+          font-weight: 200;
+        }
+        &.active {
+          .logo {
+            height: 35px;
+          }
+          .contacts {
+            height: 60px;
+          }
+          .links {
+            height: 55px;
+          }
+          .feedback {
+            height: 90px;
+          }
+        }
+      }
+      .logo {
+        .media {
+          padding-top: 10px;
+          a {
+            font-size: 20px;
+            color: white;
+            transition: 0.5s all;
+            &:hover {
+              color: black;
+            }
+          }
+        }
+      }
+      .contacts {
+        ul {
+          list-style-type: none;
+          padding: 0 0 0 10px;
+          font-family: sans-serif;
+          font-size: 12px;
+          color: white;
+        }
+      }
+      .links {
+        ul {
+          list-style-type: none;
+          padding: 0 0 0 10px;
+          li {
+            a {
+              color: white;
+              font-size: 12px;
+              font-family: sans-serif;
+              text-decoration: none;
+              position: relative;
+              transition: 0.3s all;
+              &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                width: 0;
+                height: 2px;
+                background-color: black;
+                transition: width 0.35s;
+              }
+              &:hover:before {
+                width: 100%;
+              }
+              &:hover {
+                color: black;
+              }
+            }
+          }
+        }
+      }
+      .feedback {
+        form {
+          padding-top: 10px;
+          display: flex;
+          flex-direction: column;
+          input {
+            height: 30px;
+            color: white;
+            background: none;
+            border-radius: 3px;
+            border: 2px solid rgba(34, 66, 101, 0.521);
+            outline: none;
+          }
+          button {
+            border: 2px solid rgba(34, 66, 101, 0.521);
+            background: none;
+            border-radius: 3px;
+            color: white;
+            margin-top: 5px;
+            height: 35px;
+            &:hover {
+              background-color: rgba(34, 66, 101, 0.521);
+            }
+          }
+        }
+      }
+      .logo,
+      .contacts,
+      .links,
+      .feedback {
+        position: relative;
+        height: 0;
+        font-size: 10px;
+        width: 100%;
+        overflow: hidden;
+        transition: 0.5s;
+      }
+      hr {
+        width: 100;
+        margin: 0;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
     }
     .footer-container {
       display: none;
     }
-  }
-}
-
-.accordion {
-  width: 90%;
-  margin: 0 auto;
-  color: black;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  .container {
-    position: relative;
-    margin: 10px 10px;
-    h1 {
-      font-size: 16px;
-      margin: 0;
-      color: white;
-      font-family: $main-font;
-      font-weight: 200;
-    }
-    &.active {
-      .logo {
-        height: 35px;
-      }
-      .contacts {
-        height: 60px;
-      }
-      .links {
-        height: 55px;
-      }
-      .feedback {
-        height: 90px;
-      }
-    }
-  }
-  .logo {
-    .media {
-      padding-top: 10px;
-      a {
-        font-size: 20px;
-        color: white;
-        transition: 0.5s all;
-        &:hover {
-          color: black;
-        }
-      }
-    }
-  }
-  .contacts {
-    ul {
-      list-style-type: none;
-      padding: 0 0 0 10px;
-      font-family: sans-serif;
-      font-size: 12px;
-      color: white;
-    }
-  }
-  .links {
-    ul {
-      list-style-type: none;
-      padding: 0 0 0 10px;
-      li {
-        a {
-          color: white;
-          font-size: 12px;
-          font-family: sans-serif;
-          text-decoration: none;
-          position: relative;
-          transition: 0.3s all;
-          &::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -2px;
-            width: 0;
-            height: 2px;
-            background-color: black;
-            transition: width 0.35s;
-          }
-          &:hover:before {
-            width: 100%;
-          }
-          &:hover {
-            color: black;
-          }
-        }
-      }
-    }
-  }
-  .feedback {
-    form {
-      padding-top: 10px;
-      display: flex;
-      flex-direction: column;
-      input {
-        height: 30px;
-        color: white;
-        background: none;
-        border-radius: 3px;
-        border: 2px solid rgba(34, 66, 101, 0.521);
-        outline: none;
-      }
-      button {
-        border: 2px solid rgba(34, 66, 101, 0.521);
-        background: none;
-        border-radius: 3px;
-        color: white;
-        margin-top: 5px;
-        height: 35px;
-        &:hover {
-          background-color: rgba(34, 66, 101, 0.521);
-        }
-      }
-    }
-  }
-  .logo,
-  .contacts,
-  .links,
-  .feedback {
-    position: relative;
-    height: 0;
-    font-size: 10px;
-    text-align: justify;
-    width: 100%;
-    overflow: hidden;
-    transition: 0.5s;
-  }
-  hr {
-    width: 100;
-    margin-left: 0;
-    margin: 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
