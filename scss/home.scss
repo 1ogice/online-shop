@@ -292,9 +292,10 @@ footer {
     display: none;
   }
   .footer-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
     margin: 0 auto;
     width: 80%;
-    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;

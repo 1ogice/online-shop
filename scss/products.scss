@@ -171,6 +171,7 @@ main {
           }
           .price-value {
             font-size: 16px;
+            color: rgba(255, 255, 255, 0.582);
           }
         }
       }
@@ -185,6 +186,8 @@ footer {
     display: none;
   }
   .footer-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
     margin: 0 auto;
     width: 80%;
     height: 100%;

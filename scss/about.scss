@@ -165,6 +165,8 @@ footer {
     display: none;
   }
   .footer-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
     margin: 0 auto;
     width: 80%;
     height: 100%;
@@ -342,7 +344,6 @@ footer {
     display: none;
   }
   .footer-container {
-    width: 90%;
     .logo {
       h1 {
         font-size: 35px;
@@ -354,34 +355,21 @@ footer {
       }
     }
     .links {
-      h1 {
-        font-size: 22px;
-      }
       ul {
         li {
-          padding-bottom: 10px;
-          a {
-            font-size: 12px;
-          }
+          padding-bottom: 15px;
         }
       }
     }
     .contacts {
-      h1 {
-        font-size: 22px;
-      }
       ul {
         li {
-          padding-bottom: 10px;
-          font-size: 12px;
+          padding-bottom: 15px;
           height: 18px;
         }
       }
     }
     .feedback {
-      h1 {
-        font-size: 22px;
-      }
       form {
         label {
           font-size: 16px;

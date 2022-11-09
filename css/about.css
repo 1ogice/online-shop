@@ -189,6 +189,8 @@ footer .accordion {
   display: none;
 }
 footer .footer-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin: 0 auto;
   width: 80%;
   height: 100%;
@@ -401,34 +403,18 @@ footer .footer-container .feedback form button:hover {
 footer .accordion {
   display: none;
 }
-footer .footer-container {
-  width: 90%;
-}
 footer .footer-container .logo h1 {
   font-size: 35px;
 }
 footer .footer-container .logo .media a {
   font-size: 25px;
 }
-footer .footer-container .links h1 {
-  font-size: 22px;
-}
 footer .footer-container .links ul li {
-  padding-bottom: 10px;
-}
-footer .footer-container .links ul li a {
-  font-size: 12px;
-}
-footer .footer-container .contacts h1 {
-  font-size: 22px;
+  padding-bottom: 15px;
 }
 footer .footer-container .contacts ul li {
-  padding-bottom: 10px;
-  font-size: 12px;
+  padding-bottom: 15px;
   height: 18px;
-}
-footer .footer-container .feedback h1 {
-  font-size: 22px;
 }
 footer .footer-container .feedback form label {
   font-size: 16px;

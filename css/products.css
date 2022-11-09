@@ -208,6 +208,7 @@ main .main-container aside form article button {
 }
 main .main-container aside form article .price-value {
   font-size: 16px;
+  color: rgba(255, 255, 255, 0.582);
 }
 
 footer {
@@ -218,6 +219,8 @@ footer .accordion {
   display: none;
 }
 footer .footer-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin: 0 auto;
   width: 80%;
   height: 100%;
