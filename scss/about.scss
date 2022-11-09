@@ -8,58 +8,11 @@ body {
   margin: 0;
 }
 
-.page-up {
-  width: 50px;
-  height: 50px;
-  position: fixed;
-  border: 2px solid white;
-  border-radius: 50%;
-  left: 40px;
-  bottom: 140px;
-  transition: 0.3s all;
-  animation-name: show_page_up;
-  animation-duration: 1s;
-  &::after {
-    content: "";
-    width: 20px;
-    height: 20px;
-    border-left: 2px solid white;
-    border-top: 2px solid white;
-    left: 14px;
-    position: absolute;
-    top: 30px;
-    transform: translateY(-50%) rotate(45deg);
-    transition: 0.3s all;
-  }
-  &:hover {
-    border: 2px solid black;
-    &::after {
-      border-left: 2px solid black;
-      border-top: 2px solid black;
-    }
-  }
-}
-.page-up-hidden {
-  display: none;
-}
-@keyframes show_page_up {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 header {
   padding-top: 30px;
-  color: white;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  background-image: url(../images/header-background.jpg);
-  box-shadow: inset 1px 1200px rgba(0, 0, 0, 0.459);
-  height: 500px;
+  padding-bottom: 30px;
+  background-color: rgba(34, 66, 101, 0.685);
+  border-bottom: 1px solid white;
 }
 
 .header-container {
@@ -106,6 +59,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: white;
     .burger {
       display: none;
       &.active {
@@ -173,121 +127,40 @@ header {
       }
     }
   }
-  section {
-    margin-top: 100px;
-    .header-sign {
+}
+
+main {
+  padding-top: 30px;
+  color: white;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(../images/about-background.jpg);
+  box-shadow: inset 1px 1200px rgba(0, 0, 0, 0.459);
+  height: 500px;
+  .main-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    h1 {
+      font-family: $main-font;
+      font-weight: 200;
+      font-size: 40px;
       margin: 0;
-      font-size: 80px;
-      font-family: "Dancing Script", cursive;
     }
     p {
       font-family: $main-font;
       font-size: 20px;
     }
-    .show-btn {
-      background: none;
-      border: 2px solid white;
-      border-radius: 5px;
-      padding: 5px 10px;
-      color: white;
-      letter-spacing: 3px;
-      transition: 0.3s all;
-      cursor: pointer;
-      &:hover {
-        border: 2px solid black;
-        color: black;
-        a {
-          color: black;
-        }
-      }
-      a {
-        transition: 0.3s all;
-        font-family: sans-serif;
-        text-decoration: none;
-        color: white;
-      }
-    }
-  }
-}
-
-main {
-  border-top: 1px solid white;
-  font-family: $main-font;
-  color: white;
-  padding-top: 20px;
-  height: 500px;
-  background-color: rgba(34, 66, 101, 0.685);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .featured-sign {
-    font-weight: 200;
-    margin: 0 auto 50px auto;
-  }
-  section {
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    height: 200px;
-    margin-bottom: 100px;
-    .section-elem {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 250px;
-      border-radius: 3px;
-      overflow: hidden;
-      transition: 0.3s all;
-      .image-link {
-        height: 200px;
-      }
-      .article-img {
-        height: 200px;
-        width: 300px;
-        margin-bottom: 10px;
-        transition: 0.3s all;
-        &:hover {
-          transform: scale(0.9, 0.9);
-        }
-      }
-      h3 {
-        margin: 0;
-        font-size: 18px;
-        font-weight: 200;
-      }
-      p {
-        margin: 0;
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.616);
-      }
-    }
-  }
-  button {
-    padding: 7px 15px;
-    background: none;
-    border: 2px solid white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s all;
-    &:hover {
-      border: 2px solid black;
-      a {
-        color: black;
-      }
-    }
-    a {
-      font-size: 18px;
-      transition: 0.3s all;
-      text-decoration: none;
-      color: white;
-    }
   }
 }
 
 footer {
+  background-color: rgba(34, 66, 101, 0.685);
   border-top: 1px solid white;
-  height: auto;
-  background-color: rgba(34, 66, 101, 0.521);
   .accordion {
     display: none;
   }
@@ -433,22 +306,6 @@ footer {
 }
 
 @media (max-width: 1024px) {
-  .page-up {
-    width: 40px;
-    height: 40px;
-    bottom: 130px;
-    &::after {
-      width: 15px;
-      height: 15px;
-      left: 12px;
-      top: 23px;
-    }
-  }
-
-  header {
-    height: 400px;
-  }
-
   .header-container {
     width: 90%;
     .navigation {
@@ -470,105 +327,68 @@ footer {
         }
       }
     }
-    section {
-      margin-top: 80px;
-      .header-sign {
-        font-size: 70px;
-      }
-      p {
-        font-size: 16px;
-      }
-      .show-btn {
-        font-size: 10px;
-      }
-    }
   }
 
   main {
-    padding-top: 20px;
-    height: 420px;
-    .featured-sign {
-      font-size: 28px;
-      margin-bottom: 40px;
-    }
+    height: auto;
     section {
-      width: 90%;
-      height: 200px;
-      margin-bottom: 50px;
-      .section-elem {
-        height: 250px;
-        .image-link {
-          height: 150px;
-        }
-        .article-img {
-          height: 150px;
-          width: 250px;
-        }
-        h3 {
-          font-size: 16px;
-        }
-        p {
-          font-size: 12px;
-        }
-      }
-    }
-    button {
-      a {
-        font-size: 14px;
-      }
+      height: auto;
     }
   }
+}
 
-  footer {
-    .footer-container {
-      width: 90%;
-      .logo {
-        h1 {
-          font-size: 35px;
+footer {
+  .accordion {
+    display: none;
+  }
+  .footer-container {
+    width: 90%;
+    .logo {
+      h1 {
+        font-size: 35px;
+      }
+      .media {
+        a {
+          font-size: 25px;
         }
-        .media {
+      }
+    }
+    .links {
+      h1 {
+        font-size: 22px;
+      }
+      ul {
+        li {
+          padding-bottom: 10px;
           a {
-            font-size: 25px;
-          }
-        }
-      }
-      .links {
-        h1 {
-          font-size: 22px;
-        }
-        ul {
-          li {
-            padding-bottom: 10px;
-            a {
-              font-size: 12px;
-            }
-          }
-        }
-      }
-      .contacts {
-        h1 {
-          font-size: 22px;
-        }
-        ul {
-          li {
-            padding-bottom: 10px;
             font-size: 12px;
-            height: 18px;
           }
         }
       }
-      .feedback {
-        h1 {
-          font-size: 22px;
+    }
+    .contacts {
+      h1 {
+        font-size: 22px;
+      }
+      ul {
+        li {
+          padding-bottom: 10px;
+          font-size: 12px;
+          height: 18px;
         }
-        form {
-          label {
-            font-size: 16px;
-          }
-          button {
-            height: 30px;
-            font-size: 16px;
-          }
+      }
+    }
+    .feedback {
+      h1 {
+        font-size: 22px;
+      }
+      form {
+        label {
+          font-size: 16px;
+        }
+        button {
+          height: 30px;
+          font-size: 16px;
         }
       }
     }
@@ -576,16 +396,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .page-up {
-    display: none;
-  }
-
-  header {
-    height: 300px;
-    background-position: 50% -150px;
-    background-size: 100% 100%;
-  }
-
   .header-container {
     .menu {
       display: block;
@@ -631,56 +441,12 @@ footer {
         }
       }
     }
-    section {
-      margin-top: 60px;
-      .header-sign {
-        font-size: 50px;
-      }
-      p {
-        font-size: 12px;
-      }
-      .show-btn {
-        font-size: 6px;
-      }
-    }
   }
 
   main {
-    padding-top: 8px;
     height: auto;
-    padding-bottom: 30px;
-    .featured-sign {
-      font-size: 20px;
-      margin-bottom: 16px;
-    }
     section {
-      flex-direction: column;
-      align-items: center;
       height: auto;
-      .section-elem {
-        height: 225px;
-        width: 80%;
-        .image-link {
-          width: 100%;
-          height: 175px;
-        }
-        .article-img {
-          height: 175px;
-          width: 100%;
-        }
-        h3 {
-          font-size: 10px;
-        }
-        p {
-          font-size: 8px;
-        }
-      }
-    }
-    button {
-      padding: 3px 12px;
-      a {
-        font-size: 10px;
-      }
     }
   }
 
