@@ -161,6 +161,7 @@ header {
       background: none;
       border: none;
       cursor: pointer;
+      position: relative;
       .icon-basket {
         color: white;
         font-size: 30px;
@@ -170,6 +171,21 @@ header {
         &:hover::before {
           color: black;
         }
+      }
+      .basket-value {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: -5px;
+        font-size: 22px;
+        font-weight: 600;
+        right: 0;
+        color: white;
+        background-color: black;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
       }
     }
   }
@@ -469,6 +485,13 @@ footer {
         .icon-basket {
           font-size: 20px;
         }
+        .basket-value {
+          right: 5px;
+          top: -5px;
+          font-size: 12px;
+          width: 17px;
+          height: 17px;
+        }
       }
     }
     section {
@@ -583,7 +606,6 @@ footer {
 
   header {
     height: 300px;
-    // background-position: 50% -150px;
     background-size: 100% 100%;
   }
 
@@ -629,6 +651,13 @@ footer {
       button {
         .icon-basket {
           font-size: 16px;
+        }
+        .basket-value {
+          right: 3px;
+          top: -3px;
+          font-size: 9px;
+          width: 13px;
+          height: 13px;
         }
       }
     }
