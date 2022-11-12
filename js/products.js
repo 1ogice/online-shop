@@ -1,11 +1,4 @@
-// function test() {
-//   fetch("./youtJSON.json")
-//     .then((res) => res.json())
-//     .then((data) => console.log(data));
-//   return data;
-// }
-
-// let info = test();
+import products from "./products.json" assert { type: "json" };
 
 let burger = document.querySelector(".burger"),
   menu = document.querySelector(".menu");
@@ -17,8 +10,14 @@ burger.addEventListener("click", function () {
 
 const accordion = document.getElementsByClassName("container");
 
-for (i = 0; i < accordion.length; i++) {
+for (let i = 0; i < accordion.length; i++) {
   accordion[i].addEventListener("click", function () {
     this.classList.toggle("active");
   });
 }
+
+// for (let elem of products) {
+//   for (let i = 0; i < 1; i++) {
+//     console.log(elem.name);
+//   }
+// }

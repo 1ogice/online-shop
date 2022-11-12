@@ -1,23 +1,4 @@
-// function test() {
-//   fetch("./youtJSON.json")
-//     .then((res) => res.json())
-//     .then((data) => console.log(data));
-//   return data;
-// }
-
-// let info = test();
-
-window.scrollBy(0, 1);
-
-let pageUp = document.querySelector("#pageUp");
-
-document.onscroll = function () {
-  if (window.scrollY < 50) {
-    pageUp.classList.add("page-up-hidden");
-  } else {
-    pageUp.classList.remove("page-up-hidden");
-  }
-};
+import products from "./products.json" assert { type: "json" };
 
 let burger = document.querySelector(".burger"),
   menu = document.querySelector(".menu");
@@ -29,8 +10,27 @@ burger.addEventListener("click", function () {
 
 const accordion = document.getElementsByClassName("container");
 
-for (i = 0; i < accordion.length; i++) {
+for (let i = 0; i < accordion.length; i++) {
   accordion[i].addEventListener("click", function () {
     this.classList.toggle("active");
   });
 }
+
+(function selectionOfMainGoods(array) {
+  array.sort(() => Math.random() - 0.5);
+  array = array.slice(0, 3);
+
+  let prodNames = document.querySelectorAll(".prod-name");
+  let prodPrices = document.querySelectorAll(".prod-price");
+  let imgLinks = document.querySelectorAll(".article-img");
+
+  for (let elem of array) {
+    for (let i = 0; i < array.length; i++) {
+      prodNames[i].innerHTML = array[i].name;
+      prodPrices[i].innerHTML = array[i].price;
+      imgLinks[i].src = array[i].link;
+    }
+  }
+
+  return array;
+})(products);

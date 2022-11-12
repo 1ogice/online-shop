@@ -1,0 +1,125 @@
+[
+  {
+    "name": "Bed 'Freedom'",
+    "price": 179.99,
+    "type": "beds",
+    "link": "./images/beds-first-product.jpg"
+  },
+  {
+    "name": "Bed 'Oblivion'",
+    "price": 129.99,
+    "type": "beds",
+    "link": "./images/beds-second-product.jpeg"
+  },
+  {
+    "name": "Bed 'Desire'",
+    "price": 159.99,
+    "type": "beds",
+    "link": "./images/beds-third-product.jpg"
+  },
+  {
+    "name": "Bed 'Butterfly'",
+    "price": 219.99,
+    "type": "beds",
+    "link": "./images/beds-fourth-product.jpg"
+  },
+  {
+    "name": "Bed 'Passion'",
+    "price": 169.99,
+    "type": "beds",
+    "link": "./images/beds-fifth-product.jpg"
+  },
+
+  {
+    "name": "Chier 'Lollipop'",
+    "price": 29.99,
+    "type": "chairs",
+    "link": "./images/chairs-first-product.jpg"
+  },
+  {
+    "name": "Chier 'Eternity'",
+    "price": 19.99,
+    "type": "chairs",
+    "link": "./images/chairs-second-product.jpg"
+  },
+  {
+    "name": "Chier 'Paradise'",
+    "price": 17.99,
+    "type": "chairs",
+    "link": "./images/chairs-third-product.jpg"
+  },
+  {
+    "name": "Chier 'Galaxy'",
+    "price": 32.99,
+    "type": "chairs",
+    "link": "./images/chairs-fourth-product.jpg"
+  },
+  {
+    "name": "Chier 'Fantastic'",
+    "price": 45.99,
+    "type": "chairs",
+    "link": "./images/chairs-fifth-product.jpg"
+  },
+
+  {
+    "name": "Table 'Tranquillity'",
+    "price": 74.99,
+    "type": "tables",
+    "link": "./images/tables-first-product.jpg"
+  },
+  {
+    "name": "Table 'Constellation'",
+    "price": 43.99,
+    "type": "tables",
+    "link": "./images/tables-second-product.jpg"
+  },
+  {
+    "name": "Table 'Serendipity'",
+    "price": 37.99,
+    "type": "tables",
+    "link": "./images/tables-third-product.jpg"
+  },
+  {
+    "name": "Table 'Incredible'",
+    "price": 55.99,
+    "type": "tables",
+    "link": "./images/tables-fourth-product.jpg"
+  },
+  {
+    "name": "Table 'Destiny'",
+    "price": 44.99,
+    "type": "tables",
+    "link": "./images/tables-fifth-product.jpg"
+  },
+
+  {
+    "name": "Cabinet 'Eloquence'",
+    "price": 112.99,
+    "type": "cabinets",
+    "link": "./images/cabinets-first-product.jpg"
+  },
+  {
+    "name": "Cabinet 'Lullaby'",
+    "price": 117.99,
+    "type": "cabinets",
+    "link": "./images/cabinets-second-product.jpg"
+  },
+  {
+    "name": "Cabinet 'Imaginary'",
+    "price": 132.99,
+    "type": "cabinets",
+    "link": "./images/cabinets-third-product.jpg"
+  },
+  {
+    "name": "Cabinet 'Sunshine'",
+    "price": 109.99,
+    "type": "cabinets",
+    "link": "./images/cabinets-fourth-product.jpg"
+  },
+  {
+    "name": "Cabinet 'Rainbow'",
+    "price": 135.99,
+    "type": "cabinets",
+    "link": "./images/cabinets-fifth-product.jpg"
+  }
+]
