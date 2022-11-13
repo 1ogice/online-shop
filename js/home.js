@@ -8,13 +8,16 @@ burger.addEventListener("click", function () {
   menu.classList.toggle("active");
 });
 
-const accordion = document.getElementsByClassName("container");
+let cart = document.querySelector(".cart"),
+  basket = document.querySelector(".icon-basket"),
+  close = document.querySelector(".cart-close");
 
-for (let i = 0; i < accordion.length; i++) {
-  accordion[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-  });
-}
+basket.addEventListener("click", function () {
+  cart.classList.toggle("active");
+});
+close.addEventListener("click", function () {
+  cart.classList.remove("active");
+});
 
 (function selectionOfMainGoods(array) {
   array.sort(() => Math.random() - 0.5);
@@ -34,3 +37,11 @@ for (let i = 0; i < accordion.length; i++) {
 
   return array;
 })(products);
+
+const accordion = document.getElementsByClassName("container");
+
+for (let i = 0; i < accordion.length; i++) {
+  accordion[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+  });
+}

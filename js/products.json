@@ -31,31 +31,31 @@
   },
 
   {
-    "name": "Chier 'Lollipop'",
+    "name": "Chair 'Lollipop'",
     "price": 29.99,
     "type": "chairs",
     "link": "./images/chairs-first-product.jpg"
   },
   {
-    "name": "Chier 'Eternity'",
+    "name": "Chair 'Eternity'",
     "price": 19.99,
     "type": "chairs",
     "link": "./images/chairs-second-product.jpg"
   },
   {
-    "name": "Chier 'Paradise'",
+    "name": "Chair 'Paradise'",
     "price": 17.99,
     "type": "chairs",
     "link": "./images/chairs-third-product.jpg"
   },
   {
-    "name": "Chier 'Galaxy'",
+    "name": "Chair 'Galaxy'",
     "price": 32.99,
     "type": "chairs",
     "link": "./images/chairs-fourth-product.jpg"
   },
   {
-    "name": "Chier 'Fantastic'",
+    "name": "Chair 'Fantastic'",
     "price": 45.99,
     "type": "chairs",
     "link": "./images/chairs-fifth-product.jpg"
