@@ -39,6 +39,7 @@ header {
       transform: translateX(0%);
     }
     .cart-close {
+      cursor: pointer;
       float: right;
       display: flex;
       flex-direction: column;
@@ -64,6 +65,34 @@ header {
         margin-bottom: 5px;
         bottom: 7px;
         transform: rotate(-45deg);
+      }
+    }
+    .products-list {
+      margin-bottom: 10px;
+      border-bottom: 1px solid white;
+      margin-top: 5%;
+      height: 75%;
+    }
+    article {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h2 {
+        margin: 0;
+        font-family: $main-font;
+        font-weight: 200;
+        font-size: 20px;
+        margin-left: 10px;
+      }
+      .buy-btn {
+        width: 25%;
+        height: 25px;
+        background: none;
+        border: 1px solid white;
+        border-radius: 5px;
+        color: white;
+        font-family: $main-font;
+        font-size: 16px;
       }
     }
   }

@@ -8,6 +8,17 @@ burger.addEventListener("click", function () {
   menu.classList.toggle("active");
 });
 
+let cart = document.querySelector(".cart"),
+  basket = document.querySelector(".icon-basket"),
+  close = document.querySelector(".cart-close");
+
+basket.addEventListener("click", function () {
+  cart.classList.toggle("active");
+});
+close.addEventListener("click", function () {
+  cart.classList.remove("active");
+});
+
 const accordion = document.getElementsByClassName("container");
 
 for (let i = 0; i < accordion.length; i++) {
@@ -15,9 +26,3 @@ for (let i = 0; i < accordion.length; i++) {
     this.classList.toggle("active");
   });
 }
-
-// for (let elem of products) {
-//   for (let i = 0; i < 1; i++) {
-//     console.log(elem.name);
-//   }
-// }

@@ -18,6 +18,81 @@ header {
 .header-container {
   width: 80%;
   margin: 0 auto;
+  .cart {
+    padding: 30px 5px 0 5px;
+    box-sizing: border-box;
+    position: fixed;
+    height: 100%;
+    width: 40%;
+    background-color: rgba(34, 66, 101, 0.885);
+    top: 0;
+    z-index: 1000;
+    right: 0;
+    transition: 0.3s all;
+    border-left: 1px solid white;
+    transform: translateX(100%);
+    &.active {
+      transform: translateX(0%);
+    }
+    .cart-close {
+      cursor: pointer;
+      float: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      .close-bar1,
+      .close-bar2,
+      .close-bar3 {
+        height: 2px;
+        background-color: white;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        position: relative;
+      }
+      .close-bar1 {
+        top: 6.5px;
+        transform: rotate(45deg);
+      }
+      .close-bar2 {
+        opacity: 0;
+      }
+      .close-bar3 {
+        margin-bottom: 5px;
+        bottom: 7px;
+        transform: rotate(-45deg);
+      }
+    }
+    .products-list {
+      margin-bottom: 10px;
+      border-bottom: 1px solid white;
+      margin-top: 5%;
+      height: 75%;
+    }
+    article {
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h2 {
+        margin: 0;
+        font-family: $main-font;
+        font-weight: 200;
+        font-size: 20px;
+        margin-left: 10px;
+      }
+      .buy-btn {
+        width: 25%;
+        height: 25px;
+        background: none;
+        border: 1px solid white;
+        border-radius: 5px;
+        color: white;
+        font-family: $main-font;
+        font-size: 16px;
+      }
+    }
+  }
   .menu {
     display: none;
     position: fixed;
@@ -149,12 +224,11 @@ main {
   padding-top: 30px;
   color: white;
   background-color: rgba(34, 66, 101, 0.885);
-  height: 1000px;
   .main-container {
     width: 80%;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    height: 1000px;
     aside {
       width: 20%;
       form {
@@ -191,6 +265,12 @@ main {
           }
         }
       }
+    }
+    .products {
+      // background-color: wheat;
+      height: 100%;
+      width: 80%;
+      border: 1px solid white;
     }
   }
 }
@@ -442,6 +522,9 @@ footer {
   }
 
   .header-container {
+    .cart {
+      width: 100%;
+    }
     .menu {
       display: block;
     }
