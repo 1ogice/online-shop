@@ -228,7 +228,7 @@ main {
     width: 80%;
     margin: 0 auto;
     display: flex;
-    height: 1000px;
+    min-height: 1000px;
     aside {
       width: 20%;
       form {
@@ -266,11 +266,84 @@ main {
         }
       }
     }
-    .products {
-      // background-color: wheat;
-      height: 100%;
+    .products-field {
       width: 80%;
-      border: 1px solid white;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding-left: 2%;
+      box-sizing: border-box;
+      .product-section {
+        border-radius: 5px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        height: 180px;
+        margin: 0 0 15px 0;
+        position: relative;
+        .product-price {
+          z-index: 1000;
+          position: absolute;
+          color: rgba(0, 0, 0, 0.885);
+          margin: 0;
+          right: 0;
+          font-family: $main-font;
+          font-weight: 600;
+        }
+        .product-img {
+          height: 150px;
+          width: 250px;
+        }
+      }
+      .product-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        .product-name {
+          color: white;
+          margin: 0;
+          font-family: $main-font;
+          font-weight: 200;
+          font-size: 16px;
+        }
+        .product-button {
+          display: flex;
+          justify-content: space-between;
+          height: 80%;
+          width: 90px;
+          .product-button-minus {
+            width: 100%;
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.26);
+            color: white;
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+            transition: 0.3s all;
+            &:hover {
+              background: rgb(27, 85, 148);
+            }
+          }
+          .product-button-value {
+            width: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.26);
+            outline: none;
+            text-align: center;
+          }
+          .product-button-plus {
+            width: 100%;
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.26);
+            color: white;
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+            transition: 0.3s all;
+            &:hover {
+              background: rgb(27, 85, 148);
+            }
+          }
+        }
+      }
     }
   }
 }
