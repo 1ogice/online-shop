@@ -1,4 +1,5 @@
 import products from "./products.json" assert { type: "json" };
+window.productsFilter = productsFilter;
 
 (function burgerSwitch() {
   let burger = document.querySelector(".burger"),
@@ -74,13 +75,32 @@ import products from "./products.json" assert { type: "json" };
     let productButtonValue = document.createElement("input");
     productButtonValue.className = "product-button-value";
     productButtonValue.setAttribute("type", "number");
-    productButtonValue.value = 0;
-    console.log(productButtonValue.value);
+    // productButtonValue.value = 0;
+    // console.log(productButtonValue.value);
     productButton.appendChild(productButtonValue);
 
     let productButtonPlus = document.createElement("button");
     productButtonPlus.className = "product-button-plus";
     productButtonPlus.innerHTML = "+";
     productButton.appendChild(productButtonPlus);
+
+    let productType = document.createElement("span");
+    productType.className = "product-type";
+    productType.innerHTML = data[i].type;
+    productSection.appendChild(productType);
   }
 })(products);
+
+function productsFilter(filt) {
+  let allProductsSections = document.querySelectorAll(".product-section");
+
+  for (let elem of allProductsSections) {
+    elem.style.display = "flex";
+
+    if (filt === "all") {
+      elem.style.display = "flex";
+    } else if (elem.querySelector(".product-type").innerHTML != filt) {
+      elem.style.display = "none";
+    }
+  }
+}

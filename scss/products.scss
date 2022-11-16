@@ -224,11 +224,11 @@ main {
   padding-top: 30px;
   color: white;
   background-color: rgba(34, 66, 101, 0.885);
+  min-height: 1000px;
   .main-container {
     width: 80%;
     margin: 0 auto;
     display: flex;
-    min-height: 1000px;
     aside {
       width: 20%;
       form {
@@ -281,14 +281,18 @@ main {
         height: 180px;
         margin: 0 0 15px 0;
         position: relative;
+        .product-type {
+          display: none;
+        }
         .product-price {
-          z-index: 1000;
           position: absolute;
           color: rgba(0, 0, 0, 0.885);
           margin: 0;
           right: 0;
           font-family: $main-font;
           font-weight: 600;
+          background: rgba(255, 255, 255, 0.479);
+          border-bottom-left-radius: 5px;
         }
         .product-img {
           height: 150px;
