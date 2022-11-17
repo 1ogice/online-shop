@@ -317,6 +317,11 @@ main .main-container aside form article button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+main .main-container aside form article button:hover {
+  color: black;
 }
 main .main-container aside form article .price-value {
   font-size: 16px;

@@ -1,5 +1,7 @@
 import products from "./products.json" assert { type: "json" };
+
 window.productsFilter = productsFilter;
+window.priceFilter = priceFilter;
 
 (function burgerSwitch() {
   let burger = document.querySelector(".burger"),
@@ -101,6 +103,45 @@ function productsFilter(filt) {
       elem.style.display = "flex";
     } else if (elem.querySelector(".product-type").innerHTML != filt) {
       elem.style.display = "none";
+    }
+  }
+}
+
+function priceFilter() {
+  function maxPrice() {
+    let maxPrice = products.reduce((prev, current) =>
+      prev.price > current.price ? prev : current
+    );
+    return +maxPrice.price.toFixed(0);
+  }
+
+  function minPrice() {
+    let minPrice = products.reduce((prev, current) =>
+      prev.price < current.price ? prev : current
+    );
+    return +minPrice.price.toFixed(0);
+  }
+
+  progressBar.setAttribute("max", maxPrice());
+  progressBar.setAttribute("min", minPrice());
+
+  progressBarValue.innerHTML = progressBar.value + "$";
+
+  let allProductsSections = document.querySelectorAll(".product-section");
+
+  for (let elem of allProductsSections) {
+    if (
+      +elem
+        .querySelector(".product-price")
+        .innerHTML.replace(/[^0-9.\s]/gi, " ") > progressBar.value
+    ) {
+      elem.style.display = "none";
+    } else if (
+      +elem
+        .querySelector(".product-price")
+        .innerHTML.replace(/[^0-9.\s]/gi, " ") < progressBar.value
+    ) {
+      elem.style.display = "flex";
     }
   }
 }

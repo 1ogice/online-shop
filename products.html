@@ -62,7 +62,13 @@
             </article>
             <article>
               <label for="">Company</label>
-              <button type="reset" id="filterAll" onclick="productsFilter('all')">All</button>
+              <button
+                type="reset"
+                id="filterAll"
+                onclick="productsFilter('all')"
+              >
+                All
+              </button>
               <button
                 type="reset"
                 id="filterBeds"
@@ -94,8 +100,15 @@
             </article>
             <article>
               <label for="">Price</label>
-              <input class="price" type="range" />
-              <label class="price-value" for="">Value: <span>10</span>$</label>
+              <input
+                class="price"
+                id="progressBar"
+                type="range"
+                oninput="priceFilter()"
+              />
+              <label class="price-value" for=""
+                >Value: <span id="progressBarValue">Not filtered</span></label
+              >
             </article>
           </form>
         </aside>

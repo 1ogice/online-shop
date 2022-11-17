@@ -258,6 +258,10 @@ main {
             border: none;
             font-family: $main-font;
             display: flex;
+            transition: 0.3s all;
+            &:hover {
+              color: black;
+            }
           }
           .price-value {
             font-size: 16px;
