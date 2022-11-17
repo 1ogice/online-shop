@@ -226,7 +226,7 @@ main {
   background-color: rgba(34, 66, 101, 0.885);
   min-height: 1000px;
   .main-container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     display: flex;
     aside {
@@ -274,7 +274,7 @@ main {
       width: 80%;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      padding-left: 2%;
+      padding-left: 10px;
       box-sizing: border-box;
       .product-section {
         border-radius: 5px;
@@ -283,7 +283,7 @@ main {
         flex-direction: column;
         width: 250px;
         height: 180px;
-        margin: 0 0 15px 0;
+        margin: 0 5px 15px 0;
         position: relative;
         .product-type {
           display: none;
@@ -337,6 +337,11 @@ main {
             border: 1px solid rgba(255, 255, 255, 0.26);
             outline: none;
             text-align: center;
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
           }
           .product-button-plus {
             width: 100%;
@@ -536,6 +541,14 @@ footer {
     }
   }
 
+  main {
+    .main-container {
+      .products-field {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
   footer {
     .accordion {
       display: none;
@@ -661,46 +674,19 @@ footer {
 
   main {
     padding-top: 8px;
-    height: 1000px;
     padding-bottom: 30px;
     .main-container {
-      width: 80%;
+      width: 90%;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      .products-field {
+        grid-template-columns: repeat(1, 1fr);
+        width: auto;
+      }
       aside {
-        width: 30%;
-        form {
-          display: flex;
-          flex-direction: column;
-          article {
-            display: flex;
-            flex-direction: column;
-            .search {
-              color: white;
-              background: none;
-              border: 2px solid rgba(34, 66, 101, 0.885);
-              border-radius: 5px;
-              height: 30px;
-              margin-bottom: 10px;
-              outline: none;
-            }
-            label {
-              font-family: $main-font;
-              margin-bottom: 10px;
-              font-size: 20px;
-            }
-            button {
-              background: none;
-              color: white;
-              margin-bottom: 5px;
-              border: none;
-              font-family: $main-font;
-              display: flex;
-            }
-          }
-        }
+        width: 90%;
       }
     }
   }

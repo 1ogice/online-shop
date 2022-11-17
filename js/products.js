@@ -77,8 +77,7 @@ window.priceFilter = priceFilter;
     let productButtonValue = document.createElement("input");
     productButtonValue.className = "product-button-value";
     productButtonValue.setAttribute("type", "number");
-    // productButtonValue.value = 0;
-    // console.log(productButtonValue.value);
+    productButtonValue.value = 0; //NEED TO CHANGE
     productButton.appendChild(productButtonValue);
 
     let productButtonPlus = document.createElement("button");
