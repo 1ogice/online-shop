@@ -145,3 +145,22 @@ function priceFilter() {
     }
   }
 }
+
+function productsSearch() {
+  let allProductsSections = document.querySelectorAll(".product-section");
+
+  for (let elem of allProductsSections) {
+    if (
+      elem
+        .querySelector(".product-name")
+        .innerHTML.toUpperCase()
+        .indexOf(searchInput.value.toUpperCase()) > -1
+    ) {
+      elem.style.display = "";
+    } else {
+      elem.style.display = "none";
+    }
+  }
+}
+
+document.addEventListener("keyup", productsSearch);
