@@ -93,6 +93,10 @@ header {
         color: white;
         font-family: $main-font;
         font-size: 16px;
+        transition: 0.3s all;
+        &:hover {
+          background-color: rgb(27, 85, 148);
+        }
       }
     }
   }
@@ -489,6 +493,7 @@ footer {
     width: 90%;
     .cart {
       width: 100%;
+      border-left: none;
     }
     .navigation {
       .nav-menu {

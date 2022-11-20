@@ -74,16 +74,78 @@ window.priceFilter = priceFilter;
     productButtonMinus.innerHTML = "-";
     productButton.appendChild(productButtonMinus);
 
-    let productButtonValue = document.createElement("input");
-    productButtonValue.className = "product-button-value";
-    productButtonValue.setAttribute("type", "number");
-    productButtonValue.value = 0; //NEED TO CHANGE
-    productButton.appendChild(productButtonValue);
+    productButtonMinus.onclick = () => {
+      if (productQuantity.value > 0) {
+        productQuantity.value -= 1;
+      }
+    };
+
+    let productQuantity = document.createElement("input");
+    productQuantity.className = "product-button-value";
+    productQuantity.setAttribute("type", "number");
+    productQuantity.value = 0; //NEED TO CHANGE
+    productButton.appendChild(productQuantity);
 
     let productButtonPlus = document.createElement("button");
     productButtonPlus.className = "product-button-plus";
     productButtonPlus.innerHTML = "+";
     productButton.appendChild(productButtonPlus);
+
+    productButtonPlus.onclick = function test() {
+      productQuantity.value = +productQuantity.value + 1;
+
+      (function productListTemplateGeneration() {
+        let cartField = document.querySelector(".products-list");
+
+        let productDiv = document.createElement("div");
+        productDiv.className = "product-div";
+        cartField.appendChild(productDiv);
+
+        let productDivImage = document.createElement("img");
+        productDivImage.className = "product-div-image";
+        productDivImage.src = data[i].link;
+        productDiv.appendChild(productDivImage);
+
+        let productDivInfo = document.createElement("div");
+        productDivInfo.className = "product-div-info";
+        productDiv.appendChild(productDivInfo);
+
+        let productDivName = document.createElement("h2");
+        productDivName.className = "product-div-name";
+        productDivName.innerHTML = data[i].name;
+        productDivInfo.appendChild(productDivName);
+
+        let productDivPrice = document.createElement("p");
+        productDivPrice.className = "product-div-price";
+        productDivPrice.innerHTML = data[i].price + "$";
+        productDivInfo.appendChild(productDivPrice);
+
+        let productDivButtonRemove = document.createElement("button");
+        productDivButtonRemove.className = "product-div-button-remove";
+        productDivButtonRemove.innerHTML = "remove";
+        productDivInfo.appendChild(productDivButtonRemove);
+
+        let productDivQuantity = document.createElement("div");
+        productDivQuantity.className = "product-div-quantity";
+        productDiv.appendChild(productDivQuantity);
+
+        let productDivButtonUp = document.createElement("button");
+        productDivButtonUp.className = "product-div-button-up";
+        productDivQuantity.appendChild(productDivButtonUp);
+        productDivButtonUp.onclick = () => {
+          test();
+        };
+
+        let productDivValue = document.createElement("input");
+        productDivValue.className = "product-div-value";
+        productDivValue.value = 0;
+        productDivQuantity.appendChild(productDivValue);
+
+        let productDivButtonDown = document.createElement("button");
+        productDivButtonDown.className = "product-div-button-down";
+        productDivQuantity.appendChild(productDivButtonDown);
+      })();
+    };
 
     let productType = document.createElement("span");
     productType.className = "product-type";
