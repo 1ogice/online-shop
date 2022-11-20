@@ -83,7 +83,7 @@ window.priceFilter = priceFilter;
     let productQuantity = document.createElement("input");
     productQuantity.className = "product-button-value";
     productQuantity.setAttribute("type", "number");
-    productQuantity.value = 0; //NEED TO CHANGE
+    productQuantity.value = 0;
     productButton.appendChild(productQuantity);
 
     let productButtonPlus = document.createElement("button");
@@ -91,7 +91,7 @@ window.priceFilter = priceFilter;
     productButtonPlus.innerHTML = "+";
     productButton.appendChild(productButtonPlus);
 
-    productButtonPlus.onclick = function test() {
+    productButtonPlus.onclick = function addProduct() {
       productQuantity.value = +productQuantity.value + 1;
 
       (function productListTemplateGeneration() {
@@ -133,7 +133,7 @@ window.priceFilter = priceFilter;
         productDivButtonUp.className = "product-div-button-up";
         productDivQuantity.appendChild(productDivButtonUp);
         productDivButtonUp.onclick = () => {
-          test();
+          addProduct();
         };
 
         let productDivValue = document.createElement("input");
