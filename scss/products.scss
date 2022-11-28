@@ -70,6 +70,10 @@ header {
       margin-top: 5%;
       height: 75%;
       overflow: scroll;
+      overflow-x: hidden;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
       .product-div {
         display: flex;
         height: 100px;
@@ -135,6 +139,11 @@ header {
               top: 14px;
               position: absolute;
               transform: translateY(-50%) rotate(45deg);
+              transition: 0.3s all;
+            }
+            &:hover::after {
+              border-left: 2px solid black;
+              border-top: 2px solid black;
             }
           }
           .product-div-value {
@@ -156,6 +165,11 @@ header {
               top: 3px;
               position: absolute;
               transform: translateY(-50%) rotate(45deg);
+              transition: 0.3s all;
+            }
+            &:hover::after {
+              border-right: 2px solid black;
+              border-bottom: 2px solid black;
             }
           }
         }

@@ -27,7 +27,7 @@ window.priceFilter = priceFilter;
 })();
 
 (function accordionSwitch() {
-  const accordion = document.getElementsByClassName("container");
+  let accordion = document.getElementsByClassName("container");
 
   for (let i = 0; i < accordion.length; i++) {
     accordion[i].addEventListener("click", function () {
@@ -40,36 +40,40 @@ window.priceFilter = priceFilter;
   data.sort(() => Math.random() - 0.5);
 
   for (let i = 0; i < data.length; i++) {
-    let productsField = document.querySelector(".products-field");
+    let productsField = document.querySelector(".products-field"),
+      productSection = document.createElement("div"),
+      productPrice = document.createElement("p"),
+      productImg = document.createElement("img"),
+      productInfo = document.createElement("div"),
+      productName = document.createElement("h2"),
+      productButton = document.createElement("div"),
+      productButtonMinus = document.createElement("button"),
+      productQuantity = document.createElement("input"),
+      productButtonPlus = document.createElement("button");
 
-    let productSection = document.createElement("div");
     productSection.className = "product-section";
+    productSection.dataset.id = i;
+    let productId = productSection.getAttribute("data-id");
     productsField.appendChild(productSection);
 
-    let productPrice = document.createElement("p");
     productPrice.className = "product-price";
     productPrice.innerHTML = data[i].price + "$";
     productSection.appendChild(productPrice);
 
-    let productImg = document.createElement("img");
     productImg.className = "product-img";
     productImg.src = data[i].link;
     productSection.appendChild(productImg);
 
-    let productInfo = document.createElement("div");
     productInfo.className = "product-info";
     productSection.appendChild(productInfo);
 
-    let productName = document.createElement("h2");
     productName.className = "product-name";
     productName.innerHTML = data[i].name;
     productInfo.appendChild(productName);
 
-    let productButton = document.createElement("div");
     productButton.className = "product-button";
     productInfo.appendChild(productButton);
 
-    let productButtonMinus = document.createElement("button");
     productButtonMinus.className = "product-button-minus";
     productButtonMinus.innerHTML = "-";
     productButton.appendChild(productButtonMinus);
@@ -80,13 +84,11 @@ window.priceFilter = priceFilter;
       }
     };
 
-    let productQuantity = document.createElement("input");
     productQuantity.className = "product-button-value";
     productQuantity.setAttribute("type", "number");
     productQuantity.value = 0;
     productButton.appendChild(productQuantity);
 
-    let productButtonPlus = document.createElement("button");
     productButtonPlus.className = "product-button-plus";
     productButtonPlus.innerHTML = "+";
     productButton.appendChild(productButtonPlus);
@@ -94,54 +96,72 @@ window.priceFilter = priceFilter;
     productButtonPlus.onclick = function addProduct() {
       productQuantity.value = +productQuantity.value + 1;
 
+      let productDiv = document.createElement("div"),
+        productDivId = productId,
+        productDivImage = document.createElement("img"),
+        productDivInfo = document.createElement("div"),
+        productDivName = document.createElement("h2"),
+        productDivPrice = document.createElement("p"),
+        productDivButtonRemove = document.createElement("button"),
+        productDivQuantity = document.createElement("div"),
+        productDivButtonUp = document.createElement("button"),
+        productDivValue = document.createElement("input"),
+        productDivButtonDown = document.createElement("button");
+
       (function productListTemplateGeneration() {
         let cartField = document.querySelector(".products-list");
 
-        let productDiv = document.createElement("div");
+        let currentItem = cartField.querySelector(
+          `[data-id="${productDivId}"]`
+        );
+
+        if (currentItem) {
+          currentItem.querySelector(".product-div-value").value =
+            +currentItem.querySelector(".product-div-value").value + 1;
+          return false;
+        }
+
         productDiv.className = "product-div";
+        productDiv.dataset.id = productDivId;
         cartField.appendChild(productDiv);
 
-        let productDivImage = document.createElement("img");
         productDivImage.className = "product-div-image";
         productDivImage.src = data[i].link;
         productDiv.appendChild(productDivImage);
 
-        let productDivInfo = document.createElement("div");
         productDivInfo.className = "product-div-info";
         productDiv.appendChild(productDivInfo);
 
-        let productDivName = document.createElement("h2");
         productDivName.className = "product-div-name";
         productDivName.innerHTML = data[i].name;
         productDivInfo.appendChild(productDivName);
 
-        let productDivPrice = document.createElement("p");
         productDivPrice.className = "product-div-price";
         productDivPrice.innerHTML = data[i].price + "$";
         productDivInfo.appendChild(productDivPrice);
 
-        let productDivButtonRemove = document.createElement("button");
         productDivButtonRemove.className = "product-div-button-remove";
         productDivButtonRemove.innerHTML = "remove";
+        productDivButtonRemove.onclick = () => {
+          cartField.removeChild(productDiv);
+
+          productQuantity.value = 0;
+        };
         productDivInfo.appendChild(productDivButtonRemove);
 
-        let productDivQuantity = document.createElement("div");
         productDivQuantity.className = "product-div-quantity";
         productDiv.appendChild(productDivQuantity);
 
-        let productDivButtonUp = document.createElement("button");
         productDivButtonUp.className = "product-div-button-up";
         productDivQuantity.appendChild(productDivButtonUp);
         productDivButtonUp.onclick = () => {
           addProduct();
         };
 
-        let productDivValue = document.createElement("input");
         productDivValue.className = "product-div-value";
-        productDivValue.value = 0;
+        productDivValue.value = 1;
         productDivQuantity.appendChild(productDivValue);
 
-        let productDivButtonDown = document.createElement("button");
         productDivButtonDown.className = "product-div-button-down";
         productDivQuantity.appendChild(productDivButtonDown);
       })();
