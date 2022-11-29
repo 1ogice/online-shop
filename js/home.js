@@ -10,19 +10,6 @@ import products from "./products.json" assert { type: "json" };
   });
 })();
 
-(function cartSwitch() {
-  let cart = document.querySelector(".cart"),
-    basket = document.querySelector(".icon-basket"),
-    close = document.querySelector(".cart-close");
-
-  basket.addEventListener("click", function () {
-    cart.classList.toggle("active");
-  });
-  close.addEventListener("click", function () {
-    cart.classList.remove("active");
-  });
-})();
-
 (function selectionOfMainGoods(array) {
   array.sort(() => Math.random() - 0.5);
   array = array.slice(0, 3);
