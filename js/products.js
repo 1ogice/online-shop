@@ -49,11 +49,17 @@ window.priceFilter = priceFilter;
       productButton = document.createElement("div"),
       productButtonMinus = document.createElement("button"),
       productQuantity = document.createElement("input"),
-      productButtonPlus = document.createElement("button");
+      productButtonPlus = document.createElement("button"),
+      cartField = document.querySelector(".products-list");
+
+    function cartItemsQuantity() {
+      let basketSpanValue = document.querySelector(".basket-span-value");
+      basketSpanValue.innerHTML =
+        cartField.querySelectorAll(".product-div").length;
+    }
 
     productSection.className = "product-section";
     productSection.dataset.id = i;
-    let productId = productSection.getAttribute("data-id");
     productsField.appendChild(productSection);
 
     productPrice.className = "product-price";
@@ -78,12 +84,6 @@ window.priceFilter = priceFilter;
     productButtonMinus.innerHTML = "-";
     productButton.appendChild(productButtonMinus);
 
-    productButtonMinus.onclick = () => {
-      if (productQuantity.value > 0) {
-        productQuantity.value -= 1;
-      }
-    };
-
     productQuantity.className = "product-button-value";
     productQuantity.setAttribute("type", "number");
     productQuantity.value = 0;
@@ -97,7 +97,8 @@ window.priceFilter = priceFilter;
       productQuantity.value = +productQuantity.value + 1;
 
       let productDiv = document.createElement("div"),
-        productDivId = productId,
+        productDivId = productSection.getAttribute("data-id"),
+        currentItem = cartField.querySelector(`[data-id="${productDivId}"]`),
         productDivImage = document.createElement("img"),
         productDivInfo = document.createElement("div"),
         productDivName = document.createElement("h2"),
@@ -109,12 +110,6 @@ window.priceFilter = priceFilter;
         productDivButtonDown = document.createElement("button");
 
       (function productListTemplateGeneration() {
-        let cartField = document.querySelector(".products-list");
-
-        let currentItem = cartField.querySelector(
-          `[data-id="${productDivId}"]`
-        );
-
         if (currentItem) {
           currentItem.querySelector(".product-div-value").value =
             +currentItem.querySelector(".product-div-value").value + 1;
@@ -146,6 +141,8 @@ window.priceFilter = priceFilter;
           cartField.removeChild(productDiv);
 
           productQuantity.value = 0;
+
+          cartItemsQuantity();
         };
         productDivInfo.appendChild(productDivButtonRemove);
 
@@ -162,9 +159,34 @@ window.priceFilter = priceFilter;
         productDivValue.value = 1;
         productDivQuantity.appendChild(productDivValue);
 
+        function removeProduct() {
+          currentItem = cartField.querySelector(`[data-id="${productDivId}"]`);
+
+          if (
+            productQuantity.value > 0 &&
+            currentItem.querySelector(".product-div-value").value > 0
+          ) {
+            productQuantity.value -= 1;
+            currentItem.querySelector(".product-div-value").value =
+              +currentItem.querySelector(".product-div-value").value - 1;
+            if (+currentItem.querySelector(".product-div-value").value === 0) {
+              cartField.removeChild(productDiv);
+              cartItemsQuantity();
+            }
+          }
+        }
+        productButtonMinus.onclick = () => {
+          removeProduct();
+        };
+
         productDivButtonDown.className = "product-div-button-down";
+        productDivButtonDown.onclick = () => {
+          removeProduct();
+        };
         productDivQuantity.appendChild(productDivButtonDown);
       })();
+
+      cartItemsQuantity();
     };
 
     let productType = document.createElement("span");
