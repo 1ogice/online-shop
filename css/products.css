@@ -146,6 +146,7 @@ header {
   color: white;
 }
 .header-container .cart .products-list .product-div .product-div-quantity {
+  padding-right: 10px;
   width: 5%;
   height: 65%;
   display: -webkit-box;
@@ -184,8 +185,11 @@ header {
   border-top: 2px solid black;
 }
 .header-container .cart .products-list .product-div .product-div-quantity .product-div-value {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.329);
   outline: none;
   text-align: center;
+  width: 20px;
 }
 .header-container .cart .products-list .product-div .product-div-quantity .product-div-button-down {
   position: relative;

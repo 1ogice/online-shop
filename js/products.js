@@ -177,16 +177,41 @@ window.priceFilter = priceFilter;
         }
         productButtonMinus.onclick = () => {
           removeProduct();
+          calcTotalSum();
         };
 
         productDivButtonDown.className = "product-div-button-down";
         productDivButtonDown.onclick = () => {
           removeProduct();
+          calcTotalSum();
         };
         productDivQuantity.appendChild(productDivButtonDown);
       })();
 
       cartItemsQuantity();
+
+      function calcTotalSum() {
+        let allItems = cartField.querySelectorAll(".product-div"),
+          totalPriceValue = document.querySelector(".total-price");
+
+        if (allItems.length == 0) {
+          totalPriceValue.innerHTML = 0;
+        }
+
+        let totalPrice = 0;
+
+        allItems.forEach((item) => {
+          let itemQuantity = item.querySelector(".product-div-value"),
+            itemPrice = item.querySelector(".product-div-price");
+
+          let currentPrice =
+            +itemPrice.innerHTML.replace("$", "") * +itemQuantity.value;
+
+          totalPrice += currentPrice;
+          totalPriceValue.innerHTML = totalPrice.toFixed(2);
+        });
+      }
+      calcTotalSum();
     };
 
     let productType = document.createElement("span");

@@ -119,6 +119,7 @@ header {
           }
         }
         .product-div-quantity {
+          padding-right: 10px;
           width: 5%;
           height: 65%;
           display: flex;
@@ -147,8 +148,11 @@ header {
             }
           }
           .product-div-value {
+            background-color: white;
+            border: 1px solid rgba(0, 0, 0, 0.329);
             outline: none;
             text-align: center;
+            width: 20px;
           }
           .product-div-button-down {
             position: relative;
