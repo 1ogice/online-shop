@@ -143,6 +143,7 @@ window.priceFilter = priceFilter;
           productQuantity.value = 0;
 
           cartItemsQuantity();
+          calcTotalSum()
         };
         productDivInfo.appendChild(productDivButtonRemove);
 
