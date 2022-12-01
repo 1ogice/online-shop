@@ -52,6 +52,11 @@ window.priceFilter = priceFilter;
       productButtonPlus = document.createElement("button"),
       cartField = document.querySelector(".products-list");
 
+    let productDivImage = document.createElement("img"),
+      productDivName = document.createElement("h2"),
+      productDivPrice = document.createElement("p"),
+      productDivValue = document.createElement("input");
+
     function cartItemsQuantity() {
       let basketSpanValue = document.querySelector(".basket-span-value");
       basketSpanValue.innerHTML =
@@ -99,14 +104,10 @@ window.priceFilter = priceFilter;
       let productDiv = document.createElement("div"),
         productDivId = productSection.getAttribute("data-id"),
         currentItem = cartField.querySelector(`[data-id="${productDivId}"]`),
-        productDivImage = document.createElement("img"),
         productDivInfo = document.createElement("div"),
-        productDivName = document.createElement("h2"),
-        productDivPrice = document.createElement("p"),
         productDivButtonRemove = document.createElement("button"),
         productDivQuantity = document.createElement("div"),
         productDivButtonUp = document.createElement("button"),
-        productDivValue = document.createElement("input"),
         productDivButtonDown = document.createElement("button");
 
       (function productListTemplateGeneration() {
@@ -139,11 +140,12 @@ window.priceFilter = priceFilter;
         productDivButtonRemove.innerHTML = "remove";
         productDivButtonRemove.onclick = () => {
           cartField.removeChild(productDiv);
+          localStorage.removeItem(`${productDivId}`);
 
           productQuantity.value = 0;
 
           cartItemsQuantity();
-          calcTotalSum()
+          calcTotalSum();
         };
         productDivInfo.appendChild(productDivButtonRemove);
 
@@ -179,17 +181,35 @@ window.priceFilter = priceFilter;
         productButtonMinus.onclick = () => {
           removeProduct();
           calcTotalSum();
+          toLS();
         };
 
         productDivButtonDown.className = "product-div-button-down";
         productDivButtonDown.onclick = () => {
           removeProduct();
           calcTotalSum();
+          toLS();
         };
         productDivQuantity.appendChild(productDivButtonDown);
       })();
-
       cartItemsQuantity();
+
+      function toLS() {
+        let infoForLS = {
+            img: productDivImage.src,
+            name: productDivName.innerHTML,
+            price: productDivPrice.innerHTML,
+            quantity: +productDivValue.value,
+          },
+          serialInfoForLS = JSON.stringify(infoForLS);
+
+        localStorage.setItem(`${productDivId}`, serialInfoForLS);
+
+        if (!+productDivValue.value) {
+          localStorage.removeItem(`${productDivId}`);
+        }
+      }
+      toLS();
 
       function calcTotalSum() {
         let allItems = cartField.querySelectorAll(".product-div"),
