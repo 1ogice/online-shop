@@ -98,7 +98,19 @@ window.priceFilter = priceFilter;
     productButtonPlus.innerHTML = "+";
     productButton.appendChild(productButtonPlus);
 
-    productButtonPlus.onclick = function addProduct() {
+    (function loadFromLS() {
+      if (localStorage.getItem(i)) {
+        let objLS = JSON.parse(localStorage.getItem(i));
+
+        addProduct((objLS.img, objLS.name, objLS.price, objLS.quantity));
+      }
+    })();
+
+    productButtonPlus.onclick = () => {
+      addProduct();
+    };
+
+    function addProduct(func) {
       productQuantity.value = +productQuantity.value + 1;
 
       let productDiv = document.createElement("div"),
@@ -110,7 +122,7 @@ window.priceFilter = priceFilter;
         productDivButtonUp = document.createElement("button"),
         productDivButtonDown = document.createElement("button");
 
-      (function productListTemplateGeneration() {
+      func = (img = false, name = false, price = false, quantity = false) => {
         if (currentItem) {
           currentItem.querySelector(".product-div-value").value =
             +currentItem.querySelector(".product-div-value").value + 1;
@@ -122,18 +134,18 @@ window.priceFilter = priceFilter;
         cartField.appendChild(productDiv);
 
         productDivImage.className = "product-div-image";
-        productDivImage.src = data[i].link;
+        productDivImage.src = img || data[i].link;
         productDiv.appendChild(productDivImage);
 
         productDivInfo.className = "product-div-info";
         productDiv.appendChild(productDivInfo);
 
         productDivName.className = "product-div-name";
-        productDivName.innerHTML = data[i].name;
+        productDivName.innerHTML = name || data[i].name;
         productDivInfo.appendChild(productDivName);
 
         productDivPrice.className = "product-div-price";
-        productDivPrice.innerHTML = data[i].price + "$";
+        productDivPrice.innerHTML = price || data[i].price + "$";
         productDivInfo.appendChild(productDivPrice);
 
         productDivButtonRemove.className = "product-div-button-remove";
@@ -159,7 +171,7 @@ window.priceFilter = priceFilter;
         };
 
         productDivValue.className = "product-div-value";
-        productDivValue.value = 1;
+        productDivValue.value = quantity || 1;
         productDivQuantity.appendChild(productDivValue);
 
         function removeProduct() {
@@ -191,7 +203,8 @@ window.priceFilter = priceFilter;
           toLS();
         };
         productDivQuantity.appendChild(productDivButtonDown);
-      })();
+      };
+      func();
       cartItemsQuantity();
 
       function toLS() {
@@ -233,7 +246,7 @@ window.priceFilter = priceFilter;
         });
       }
       calcTotalSum();
-    };
+    }
 
     let productType = document.createElement("span");
     productType.className = "product-type";
